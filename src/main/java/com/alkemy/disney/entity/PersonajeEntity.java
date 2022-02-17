@@ -1,4 +1,4 @@
-package com.alkemy.disney.disney.entity;
+package com.alkemy.disney.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +23,10 @@ public class PersonajeEntity {
 	private Double peso;
 	private String historia;
 	
-	@ManyToMany(mappedBy = "personajesAsociados", cascade = CascadeType.ALL)
+	@ManyToMany(mappedBy = "personajesAsociados", 
+			cascade = {
+				CascadeType.PERSIST,
+				CascadeType.MERGE
+			})
 	private List<PeliculaEntity> peliculasAsociadas = new ArrayList<>();
 }

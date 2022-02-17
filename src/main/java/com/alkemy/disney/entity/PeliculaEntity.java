@@ -1,4 +1,4 @@
-package com.alkemy.disney.disney.entity;
+package com.alkemy.disney.entity;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -30,7 +30,11 @@ public class PeliculaEntity {
 	
 	private Long calificacion;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER, 
+			cascade = {
+				CascadeType.PERSIST,
+				CascadeType.MERGE
+			})
 	@JoinColumn(name = "genero_id", insertable = false, updatable = false)
 	private GeneroEntity genero;
 	
@@ -38,6 +42,7 @@ public class PeliculaEntity {
 	private Long generoId;
 	
 	@ManyToMany(
+			fetch = FetchType.EAGER,
 			cascade = {
 					CascadeType.PERSIST,
 					CascadeType.MERGE
