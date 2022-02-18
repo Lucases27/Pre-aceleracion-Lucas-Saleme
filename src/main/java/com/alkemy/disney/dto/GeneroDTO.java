@@ -11,7 +11,4 @@ public class GeneroDTO {
 	private String nombre;
 	private String imagen;
 	private String pelicula;
-	public String toString() {
-		return this.nombre+this.imagen+this.pelicula;
-	}
 }
