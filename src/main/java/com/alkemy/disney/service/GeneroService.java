@@ -8,7 +8,7 @@ import com.alkemy.disney.dto.GeneroDTO;
 public class GeneroService {
 
 	public GeneroDTO save(GeneroDTO dto) {
-		
+		System.out.println(dto);
 		return dto;
 	}
 	
