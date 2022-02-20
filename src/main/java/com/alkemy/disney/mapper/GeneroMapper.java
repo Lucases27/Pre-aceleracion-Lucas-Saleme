@@ -15,5 +15,13 @@ public class GeneroMapper {
 		return generoEntity;
 		
 	}
+	
+	public GeneroDTO generoEntity2DTO(GeneroEntity entity) {
+		GeneroDTO generoDTO = new GeneroDTO();
+		generoDTO.setId(entity.getId());
+		generoDTO.setImagen(entity.getImagen());
+		generoDTO.setNombre(entity.getNombre());
+		return generoDTO;
+	}
 
 }
