@@ -5,14 +5,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="genero")
+@Table(name="genre")
 @Getter
 @Setter
-public class GeneroEntity {
+public class GenreEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
-	private String nombre;
-	private String imagen;
+	private String name;
+	private String image;
 }

@@ -9,24 +9,24 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "personaje")
+@Table(name = "`character`")
 @Getter
 @Setter
-public class PersonajeEntity {
+public class CharacterEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
-	private String imagen;
-	private String nombre;
-	private Long edad;
-	private Double peso;
-	private String historia;
+	private String image;
+	private String name;
+	private Long age;
+	private Double weight;
+	private String history;
 	
-	@ManyToMany(mappedBy = "personajesAsociados", 
+	@ManyToMany(mappedBy = "associatedCharacters",
 			cascade = {
 				CascadeType.PERSIST,
 				CascadeType.MERGE
 			})
-	private List<PeliculaEntity> peliculasAsociadas = new ArrayList<>();
+	private List<MovieEntity> associatedMovies = new ArrayList<>();
 }

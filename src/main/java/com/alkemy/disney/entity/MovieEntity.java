@@ -12,34 +12,34 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="pelicula")
+@Table(name="movie")
 @Getter
 @Setter
-public class PeliculaEntity {
+public class MovieEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
-	private String imagen;
-	private String titulo;
+	private String image;
+	private String tittle;
 	
-	@Column(name="fecha_de_creacion")
+	@Column(name="creation_Date")
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
-	private LocalDate fechaDeCreacion;
+	private LocalDate creationDate;
 	
-	private Long calificacion;
+	private Long score;
 	
 	@ManyToOne(fetch = FetchType.EAGER, 
 			cascade = {
 				CascadeType.PERSIST,
 				CascadeType.MERGE
 			})
-	@JoinColumn(name = "genero_id", insertable = false, updatable = false)
-	private GeneroEntity genero;
+	@JoinColumn(name = "genre_id", insertable = false, updatable = false)
+	private GenreEntity genre;
 	
-	@Column(name = "genero_id", nullable = false)
-	private Long generoId;
+	@Column(name = "genre_id", nullable = false)
+	private Long genreId;
 	
 	@ManyToMany(
 			fetch = FetchType.EAGER,
@@ -48,10 +48,10 @@ public class PeliculaEntity {
 					CascadeType.MERGE
 			})
 	@JoinTable(
-			name = "personaje_pelicula",
-			joinColumns = @JoinColumn(name = "pelicula_id"),
-			inverseJoinColumns = @JoinColumn(name = "personaje_id")
+			name = "character_movie",
+			joinColumns = @JoinColumn(name = "movie_id"),
+			inverseJoinColumns = @JoinColumn(name = "character_id")
 			)
-	private Set<PersonajeEntity> personajesAsociados = new HashSet<>();
+	private Set<CharacterEntity> associatedCharacters = new HashSet<>();
 	
 }
