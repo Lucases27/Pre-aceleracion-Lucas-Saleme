@@ -10,5 +10,4 @@ public class GeneroDTO {
 	private Long id;
 	private String nombre;
 	private String imagen;
-	private String pelicula;
 }

@@ -13,8 +13,6 @@ public class GeneroEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
-	
 	private String nombre;
 	private String imagen;
-	private String pelicula;
 }
