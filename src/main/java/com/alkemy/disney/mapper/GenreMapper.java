@@ -5,6 +5,9 @@ import org.springframework.stereotype.Component;
 import com.alkemy.disney.dto.GenreDTO;
 import com.alkemy.disney.entity.GenreEntity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class GenreMapper {
 	
@@ -21,6 +24,14 @@ public class GenreMapper {
 		genreDTO.setImage(entity.getImage());
 		genreDTO.setName(entity.getName());
 		return genreDTO;
+	}
+
+	public List<GenreDTO> genreEntityList2DTOList(List<GenreEntity> entities){
+		List<GenreDTO> dtoList = new ArrayList<>();
+		for (GenreEntity entity : entities){
+			dtoList.add(this.genreEntity2DTO(entity));
+		}
+		return dtoList;
 	}
 
 }

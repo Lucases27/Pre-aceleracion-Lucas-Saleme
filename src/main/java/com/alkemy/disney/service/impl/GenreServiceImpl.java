@@ -9,6 +9,8 @@ import com.alkemy.disney.mapper.GenreMapper;
 import com.alkemy.disney.repository.GenreRepository;
 import com.alkemy.disney.service.GenreService;
 
+import java.util.List;
+
 @Service
 public class GenreServiceImpl implements GenreService {
 
@@ -19,12 +21,19 @@ public class GenreServiceImpl implements GenreService {
 	
 	
 	public GenreDTO save(GenreDTO dto) {
-		GenreEntity entity = genreMapper.genreDTO2Entity(dto);
-		GenreEntity entitySaved = genreRepository.save(entity);
-		GenreDTO result = genreMapper.genreEntity2DTO(entitySaved);
+		GenreEntity entities = genreMapper.genreDTO2Entity(dto);
+		GenreEntity savedEntity = genreRepository.save(entities);
+		GenreDTO result = genreMapper.genreEntity2DTO(savedEntity);
 		System.out.println();
 		return result;
 	}
-	
-	
+
+	public List<GenreDTO> getAllGenres() {
+		List<GenreEntity> entities = genreRepository.findAll();
+		List<GenreDTO> result = genreMapper.genreEntityList2DTOList(entities);
+
+		return result;
+	}
+
+
 }
