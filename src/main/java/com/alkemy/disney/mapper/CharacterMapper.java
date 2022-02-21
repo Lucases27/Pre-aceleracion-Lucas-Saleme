@@ -19,6 +19,9 @@ public class CharacterMapper {
 
     public CharacterEntity characterDTO2Entity(CharacterDTO dto, boolean loadMovies){
         CharacterEntity entity = new CharacterEntity();
+        if(dto.getId()!=null){
+            entity.setId(dto.getId());
+        }
         entity.setAge(dto.getAge());
         entity.setHistory(dto.getHistory());
         entity.setImage(dto.getImage());

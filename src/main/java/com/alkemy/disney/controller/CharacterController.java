@@ -38,4 +38,10 @@ public class CharacterController {
         characterService.delete(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<CharacterDTO> update(@PathVariable Long id,@RequestBody CharacterDTO character){
+        CharacterDTO characterDTO = characterService.update(id,character);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(characterDTO);
+    }
 }

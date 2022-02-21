@@ -9,7 +9,6 @@ import com.alkemy.disney.service.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -35,6 +34,23 @@ public class CharacterServiceImpl implements CharacterService {
 
     public CharacterDTO getDetails(Long id) {
         return characterMapper.characterEntity2DTO(characterRepository.getById(id),true);
+    }
+
+    public CharacterDTO getById(Long id) {
+        CharacterEntity characterEntity = characterRepository.getById(id);
+        return characterMapper.characterEntity2DTO(characterEntity,false);
+    }
+
+
+    public CharacterDTO update(Long id, CharacterDTO character) {
+        CharacterDTO characterToUpdate = this.getById(id);
+        characterToUpdate.setName(character.getName());
+        characterToUpdate.setImage(character.getImage());
+        characterToUpdate.setWeight(character.getWeight());
+        characterToUpdate.setHistory(character.getHistory());
+        characterToUpdate.setAge(character.getAge());
+        CharacterEntity entity = characterMapper.characterDTO2Entity(characterToUpdate,false);
+        return characterMapper.characterEntity2DTO(characterRepository.save(entity),false);
     }
 
     public void delete(Long id){
