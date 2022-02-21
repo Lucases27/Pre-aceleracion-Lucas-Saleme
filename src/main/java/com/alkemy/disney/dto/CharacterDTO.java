@@ -18,5 +18,5 @@ public class CharacterDTO {
     private Long age;
     private Double weight;
     private String history;
-    private List<MovieEntity> associatedMovies = new ArrayList<>();
+    private List<MovieDTO> associatedMovies = new ArrayList<>();
 }

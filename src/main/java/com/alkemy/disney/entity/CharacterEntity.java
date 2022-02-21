@@ -7,11 +7,15 @@ import javax.persistence.*;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 @Entity
-@Table(name = "`character`")
+@Table(name = "personaje")
 @Getter
 @Setter
+@SQLDelete(sql = "UPDATE personaje set deleted = true where id = ?")
+@Where(clause = "deleted = false")
 public class CharacterEntity {
 	
 	@Id
@@ -22,6 +26,7 @@ public class CharacterEntity {
 	private Long age;
 	private Double weight;
 	private String history;
+	private boolean deleted = Boolean.FALSE;
 	
 	@ManyToMany(mappedBy = "associatedCharacters",
 			cascade = {

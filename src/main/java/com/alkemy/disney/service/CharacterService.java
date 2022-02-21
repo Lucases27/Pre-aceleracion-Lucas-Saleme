@@ -8,4 +8,6 @@ public interface CharacterService {
 
     CharacterDTO save(CharacterDTO dto);
     List<CharacterBasicDTO> getAll();
+    CharacterDTO getDetails(Long id);
+    void delete(Long id);
 }

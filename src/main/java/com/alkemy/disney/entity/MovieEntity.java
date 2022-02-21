@@ -6,15 +6,19 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="movie")
+@Table(name="pelicula")
 @Getter
 @Setter
+@SQLDelete(sql = "UPDATE pelicula set deleted = true where id = ?")
+@Where(clause = "deleted = false")
 public class MovieEntity {
 	
 	@Id
@@ -29,6 +33,7 @@ public class MovieEntity {
 	private LocalDate creationDate;
 	
 	private Long score;
+	private boolean deleted = Boolean.FALSE;
 	
 	@ManyToOne(fetch = FetchType.EAGER, 
 			cascade = {
@@ -42,13 +47,13 @@ public class MovieEntity {
 	private Long genreId;
 	
 	@ManyToMany(
-			fetch = FetchType.EAGER,
+			fetch = FetchType.LAZY,
 			cascade = {
 					CascadeType.PERSIST,
 					CascadeType.MERGE
 			})
 	@JoinTable(
-			name = "character_movie",
+			name = "personaje_pelicula",
 			joinColumns = @JoinColumn(name = "movie_id"),
 			inverseJoinColumns = @JoinColumn(name = "character_id")
 			)

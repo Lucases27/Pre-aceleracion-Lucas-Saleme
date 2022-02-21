@@ -28,10 +28,16 @@ public class CharacterServiceImpl implements CharacterService {
     }
 
     public List<CharacterBasicDTO> getAll() {
-        List<CharacterBasicDTO> dtoList = new ArrayList<>();
-        for(CharacterEntity entity : characterRepository.findAll()){
-            dtoList.add(characterMapper.characterEntity2DTOBasic(entity));
-        }
+        List<CharacterEntity> entities = characterRepository.findAll();
+        List<CharacterBasicDTO> dtoList = characterMapper.characterEntity2DTOBasicList(entities);
         return dtoList;
+    }
+
+    public CharacterDTO getDetails(Long id) {
+        return characterMapper.characterEntity2DTO(characterRepository.getById(id),true);
+    }
+
+    public void delete(Long id){
+        characterRepository.deleteById(id);
     }
 }

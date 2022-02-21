@@ -28,4 +28,14 @@ public class CharacterController {
         return ResponseEntity.status(HttpStatus.OK).body(characterService.getAll());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<CharacterDTO> getDetails(@PathVariable Long id){
+        return ResponseEntity.status(HttpStatus.FOUND).body(characterService.getDetails(id));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        characterService.delete(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 }
