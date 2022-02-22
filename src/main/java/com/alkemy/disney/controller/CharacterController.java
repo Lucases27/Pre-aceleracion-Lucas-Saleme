@@ -25,18 +25,13 @@ public class CharacterController {
     }
 
     @GetMapping
-    public ResponseEntity<List<CharacterBasicDTO>> getAll(){
-        return ResponseEntity.status(HttpStatus.OK).body(characterService.getAll());
-    }
-
-    @GetMapping("/filters")
-    public ResponseEntity<List<CharacterDTO>> getAll(
+    public ResponseEntity<List<CharacterBasicDTO>> getAll(
             @RequestParam(required = false) String name,
             @RequestParam(required = false) Long age,
             @RequestParam(required = false) Double weight,
             @RequestParam(required = false) Set<Long> movies
     ){
-        List<CharacterDTO> characters = characterService.getAll(name,age,weight,movies);
+        List<CharacterBasicDTO> characters = characterService.getAll(name,age,weight,movies);
         return ResponseEntity.ok(characters);
     }
 
