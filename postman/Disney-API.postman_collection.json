@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Add genre",
+			"name": "genres",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -33,7 +33,7 @@
 			"response": []
 		},
 		{
-			"name": "Genre list basic",
+			"name": "genres",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -51,7 +51,7 @@
 			"response": []
 		},
 		{
-			"name": "Add character",
+			"name": "characters",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -78,7 +78,7 @@
 			"response": []
 		},
 		{
-			"name": "Character list",
+			"name": "characters",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -90,13 +90,30 @@
 					"port": "8080",
 					"path": [
 						"characters"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "22",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "lucas",
+							"disabled": true
+						},
+						{
+							"key": "weight",
+							"value": "1.65",
+							"disabled": true
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Delete character",
+			"name": "characters/id",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -115,7 +132,7 @@
 			"response": []
 		},
 		{
-			"name": "Character details",
+			"name": "characters/id",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -134,7 +151,7 @@
 			"response": []
 		},
 		{
-			"name": "Update character",
+			"name": "characters/id",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -156,6 +173,44 @@
 					"path": [
 						"characters",
 						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "characters/filters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/characters/filters?name=Micky&movies&weight",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"characters",
+						"filters"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Micky"
+						},
+						{
+							"key": "movies",
+							"value": null
+						},
+						{
+							"key": "weight",
+							"value": null
+						}
 					]
 				}
 			},

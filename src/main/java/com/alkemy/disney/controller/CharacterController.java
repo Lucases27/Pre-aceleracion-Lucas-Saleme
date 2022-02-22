@@ -23,13 +23,13 @@ public class CharacterController {
         CharacterDTO savedCharacter = characterService.save(character);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedCharacter);
     }
-    /*
+
     @GetMapping
     public ResponseEntity<List<CharacterBasicDTO>> getAll(){
         return ResponseEntity.status(HttpStatus.OK).body(characterService.getAll());
     }
-    */
-    @GetMapping
+
+    @GetMapping("/filters")
     public ResponseEntity<List<CharacterDTO>> getAll(
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String age,
