@@ -71,4 +71,12 @@ public class CharacterMapper {
         }
         return dtoList;
     }
+
+    public void characterEntityUpdate(CharacterEntity entity, CharacterDTO dto) {
+        entity.setName(dto.getName());
+        entity.setImage(dto.getImage());
+        entity.setWeight(dto.getWeight());
+        entity.setHistory(dto.getHistory());
+        entity.setAge(dto.getAge());
+    }
 }

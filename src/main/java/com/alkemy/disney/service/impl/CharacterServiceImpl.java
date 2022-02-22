@@ -62,15 +62,10 @@ public class CharacterServiceImpl implements CharacterService {
     }
 
 
-    public CharacterDTO update(Long id, CharacterDTO character) {
-        CharacterDTO characterToUpdate = this.getById(id);
-        characterToUpdate.setName(character.getName());
-        characterToUpdate.setImage(character.getImage());
-        characterToUpdate.setWeight(character.getWeight());
-        characterToUpdate.setHistory(character.getHistory());
-        characterToUpdate.setAge(character.getAge());
-        CharacterEntity entity = characterMapper.characterDTO2Entity(characterToUpdate,false);
-        return characterMapper.characterEntity2DTO(characterRepository.save(entity),false);
+    public CharacterDTO update(Long id, CharacterDTO characterDTO) {
+        CharacterEntity characterEntity = characterRepository.getById(id);
+        characterMapper.characterEntityUpdate(characterEntity,characterDTO);
+        return characterMapper.characterEntity2DTO(characterRepository.save(characterEntity),false);
     }
 
     public void delete(Long id){
