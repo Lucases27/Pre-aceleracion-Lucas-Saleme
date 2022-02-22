@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8b2494d6-a038-4e3e-9eb2-13ce782144b5" name="Changes" comment="cambio a intellij idea">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/mapper/CharacterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/mapper/CharacterMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/CharacterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/CharacterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/MovieBasicDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/MovieBasicDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/MovieDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/MovieDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/MovieEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/MovieEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/mapper/MovieMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/mapper/MovieMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +67,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.alkemy.disney.service.impl" />
+      <recent name="com.alkemy.disney.service" />
       <recent name="com.alkemy.disney.repository" />
       <recent name="com.alkemy.disney.dto" />
     </key>
@@ -90,7 +94,7 @@
       <workItem from="1645351195634" duration="62000" />
       <workItem from="1645351295334" duration="253000" />
       <workItem from="1645351631620" duration="6410000" />
-      <workItem from="1645423947919" duration="42696000" />
+      <workItem from="1645423947919" duration="49092000" />
     </task>
     <task id="LOCAL-00001" summary="cambio a intellij idea">
       <created>1645351784465</created>

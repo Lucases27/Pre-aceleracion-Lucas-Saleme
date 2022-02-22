@@ -11,7 +11,7 @@ import java.util.Set;
 @Getter
 @Setter
 public class MovieBasicDTO {
-    private String title;
+    private String tittle;
     private String image;
-    private LocalDate creationDate;
+    private String creationDate;
 }

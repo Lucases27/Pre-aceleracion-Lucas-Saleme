@@ -15,7 +15,7 @@ import java.util.Set;
 @Setter
 public class MovieDTO {
     private Long id;
-    private String title;
+    private String tittle;
     private String image;
     private Long score;
     private String creationDate;
