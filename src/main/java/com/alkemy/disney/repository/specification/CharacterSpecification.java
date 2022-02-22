@@ -42,6 +42,7 @@ public class CharacterSpecification {
             }
 
             if(StringUtils.hasLength(filtersDTO.getWeight())){
+
                 predicates.add(
                         criteriaBuilder.like(
                                 criteriaBuilder.lower(root.get("weight")),
@@ -51,7 +52,7 @@ public class CharacterSpecification {
             }
 
             if(!CollectionUtils.isEmpty(filtersDTO.getMovies())){
-                Join<MovieEntity,CharacterEntity> join = root.join("pelicula", JoinType.INNER);
+                Join<MovieEntity,CharacterEntity> join = root.join("associatedMovies", JoinType.INNER);
                 Expression<String> moviesId = join.get("id");
                 predicates.add(moviesId.in(filtersDTO.getMovies()));
             }
