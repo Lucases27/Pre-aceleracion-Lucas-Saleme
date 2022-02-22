@@ -27,7 +27,7 @@ public class MovieMapper {
         movieDTO.setCreationDate(entity.getCreationDate().toString());
         if (loadCharacters){
             Set<CharacterEntity> characterEntitySet = entity.getAssociatedCharacters();
-            List<CharacterDTO> characterDTOList = characterMapper.characterEntityList2DTOList(characterEntitySet);
+            List<CharacterDTO> characterDTOList = characterMapper.characterEntityList2DTOList(characterEntitySet,false);
         }
         return movieDTO;
     }

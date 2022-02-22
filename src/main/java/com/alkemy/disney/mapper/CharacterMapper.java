@@ -49,10 +49,10 @@ public class CharacterMapper {
         return dto;
     }
 
-    public List<CharacterDTO> characterEntityList2DTOList(Collection<CharacterEntity> entities){
+    public List<CharacterDTO> characterEntityList2DTOList(Collection<CharacterEntity> entities,boolean loadMovies){
         List<CharacterDTO> dtoList = new ArrayList<>();
         for (CharacterEntity entity : entities){
-            dtoList.add(this.characterEntity2DTO(entity,false));
+            dtoList.add(this.characterEntity2DTO(entity,loadMovies));
         }
         return dtoList;
     }

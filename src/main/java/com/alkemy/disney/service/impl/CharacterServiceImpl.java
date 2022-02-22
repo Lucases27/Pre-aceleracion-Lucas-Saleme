@@ -2,22 +2,27 @@ package com.alkemy.disney.service.impl;
 
 import com.alkemy.disney.dto.CharacterBasicDTO;
 import com.alkemy.disney.dto.CharacterDTO;
+import com.alkemy.disney.dto.CharacterFiltersDTO;
 import com.alkemy.disney.entity.CharacterEntity;
 import com.alkemy.disney.mapper.CharacterMapper;
 import com.alkemy.disney.repository.CharacterRepository;
+import com.alkemy.disney.repository.specification.CharacterSpecification;
 import com.alkemy.disney.service.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class CharacterServiceImpl implements CharacterService {
 
     @Autowired
-    CharacterMapper characterMapper;
+    private CharacterMapper characterMapper;
     @Autowired
-    CharacterRepository characterRepository;
+    private CharacterRepository characterRepository;
+    @Autowired
+    private CharacterSpecification characterSpecification;
 
 
     public CharacterDTO save(CharacterDTO dto){
@@ -29,6 +34,21 @@ public class CharacterServiceImpl implements CharacterService {
     public List<CharacterBasicDTO> getAll() {
         List<CharacterEntity> entities = characterRepository.findAll();
         List<CharacterBasicDTO> dtoList = characterMapper.characterEntity2DTOBasicList(entities);
+        return dtoList;
+    }
+
+    /**
+     * getAll con param querys.
+     * @param name
+     * @param age
+     * @param weight
+     * @param movies
+     * @return List<CharacterDTO>
+     */
+    public List<CharacterDTO> getAll(String name, String age, String weight, Set<Long> movies) {
+        CharacterFiltersDTO filtersDTO = new CharacterFiltersDTO(name,age,weight,movies);
+        List<CharacterEntity> entities = characterRepository.findAll(characterSpecification.getByFilters(filtersDTO));
+        List<CharacterDTO> dtoList = characterMapper.characterEntityList2DTOList(entities,true);
         return dtoList;
     }
 

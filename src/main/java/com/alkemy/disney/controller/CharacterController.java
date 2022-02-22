@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("characters")
@@ -22,10 +23,21 @@ public class CharacterController {
         CharacterDTO savedCharacter = characterService.save(character);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedCharacter);
     }
-
+    /*
     @GetMapping
     public ResponseEntity<List<CharacterBasicDTO>> getAll(){
         return ResponseEntity.status(HttpStatus.OK).body(characterService.getAll());
+    }
+    */
+    @GetMapping
+    public ResponseEntity<List<CharacterDTO>> getAll(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String age,
+            @RequestParam(required = false) String weight,
+            @RequestParam(required = false) Set<Long> movies
+    ){
+        List<CharacterDTO> characters = characterService.getAll(name,age,weight,movies);
+        return ResponseEntity.ok(characters);
     }
 
     @GetMapping("/{id}")
