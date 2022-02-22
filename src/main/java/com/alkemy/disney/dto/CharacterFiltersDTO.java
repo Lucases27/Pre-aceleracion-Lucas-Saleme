@@ -9,11 +9,11 @@ import java.util.Set;
 @Setter
 public class CharacterFiltersDTO {
     private String name;
-    private String age;
-    private String weight;
+    private Long age;
+    private Double weight;
     private Set<Long> movies;
 
-    public CharacterFiltersDTO(String name, String age, String weight, Set<Long> movies) {
+    public CharacterFiltersDTO(String name, Long age, Double weight, Set<Long> movies) {
         this.name = name;
         this.age = age;
         this.weight = weight;
