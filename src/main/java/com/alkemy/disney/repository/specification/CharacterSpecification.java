@@ -34,20 +34,13 @@ public class CharacterSpecification {
 
             if(filtersDTO.getAge()!=null){
                 predicates.add(
-                        criteriaBuilder.equal(
-                                criteriaBuilder.lower(root.get("age")),
-                                filtersDTO.getAge()
-                        )
+                        criteriaBuilder.equal(root.get("age"),filtersDTO.getAge())
                 );
             }
 
             if(filtersDTO.getWeight()!=null){
-
                 predicates.add(
-                        criteriaBuilder.equal(
-                                criteriaBuilder.lower(root.get("weight")),
-                                filtersDTO.getWeight()
-                        )
+                        criteriaBuilder.equal(root.get("weight"),filtersDTO.getWeight())
                 );
             }
 

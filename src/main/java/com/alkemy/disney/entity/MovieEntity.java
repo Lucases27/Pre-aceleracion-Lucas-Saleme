@@ -43,7 +43,7 @@ public class MovieEntity {
 	@JoinColumn(name = "genre_id", insertable = false, updatable = false)
 	private GenreEntity genre;
 	
-	@Column(name = "genre_id")
+	@Column(name = "genre_id", nullable = false)
 	private Long genreId;
 	
 	@ManyToMany(

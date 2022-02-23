@@ -8,7 +8,6 @@ import java.util.Set;
 public interface CharacterService {
 
     CharacterDTO save(CharacterDTO dto);
-    List<CharacterBasicDTO> getAll();
     CharacterDTO getDetails(Long id);
     CharacterDTO getById(Long id);
     CharacterDTO update(Long id, CharacterDTO character);

@@ -31,12 +31,6 @@ public class CharacterServiceImpl implements CharacterService {
         return characterMapper.characterEntity2DTO(savedEntity,false);
     }
 
-    public List<CharacterBasicDTO> getAll() {
-        List<CharacterEntity> entities = characterRepository.findAll();
-        List<CharacterBasicDTO> dtoList = characterMapper.characterEntity2DTOBasicList(entities);
-        return dtoList;
-    }
-
     /**
      * getAll con param querys.
      * @param name

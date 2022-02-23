@@ -19,8 +19,11 @@ public class MovieController {
     MovieService movieService;
 
     @GetMapping
-    public ResponseEntity<List<MovieBasicDTO>> getAll(){
-        return ResponseEntity.status(HttpStatus.OK).body(movieService.getAllMovies());
+    public ResponseEntity<List<MovieBasicDTO>> getAll(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) Long genre,
+            @RequestParam(required = false) String order){
+        return ResponseEntity.status(HttpStatus.OK).body(movieService.getAllMovies(name,genre,order));
     }
 
     @PostMapping
@@ -37,6 +40,12 @@ public class MovieController {
     public ResponseEntity<Void> delete(@PathVariable Long id){
         movieService.deleteMovie(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<MovieDTO> update(@PathVariable Long id, @RequestBody MovieDTO dto){
+        MovieDTO updatedDTO = movieService.updateMovie(id,dto);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(updatedDTO);
     }
 
 

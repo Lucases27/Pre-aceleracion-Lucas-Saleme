@@ -29,8 +29,7 @@ public class CharacterController {
             @RequestParam(required = false) String name,
             @RequestParam(required = false) Long age,
             @RequestParam(required = false) Double weight,
-            @RequestParam(required = false) Set<Long> movies
-    ){
+            @RequestParam(required = false) Set<Long> movies){
         List<CharacterBasicDTO> characters = characterService.getAll(name,age,weight,movies);
         return ResponseEntity.ok(characters);
     }

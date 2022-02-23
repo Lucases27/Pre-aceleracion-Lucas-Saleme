@@ -9,7 +9,8 @@ import java.util.List;
 public interface MovieService {
 	
 	MovieDTO save(MovieDTO dto);
-	List<MovieBasicDTO> getAllMovies();
+	List<MovieBasicDTO> getAllMovies(String name, Long genreId, String order);
 	MovieDTO getDetails(Long id);
 	void deleteMovie(Long id);
+    MovieDTO updateMovie(Long id, MovieDTO dto);
 }

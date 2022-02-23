@@ -5,11 +5,10 @@ import com.alkemy.disney.dto.MovieBasicDTO;
 import com.alkemy.disney.dto.MovieDTO;
 import com.alkemy.disney.entity.CharacterEntity;
 import com.alkemy.disney.entity.MovieEntity;
+import com.alkemy.disney.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -31,9 +30,9 @@ public class MovieMapper {
         entity.setGenreId(dto.getGenreId());
         entity.setImage(dto.getImage());
         entity.setScore(dto.getScore());
-        entity.setCreationDate(this.string2LocalDate(dto.getCreationDate()));
+        entity.setCreationDate(DateUtil.string2LocalDate(dto.getCreationDate()));
         if(loadCharacters){
-            //TODO load movie list.
+            //TODO load characters list.
         }
         return entity;
     }
@@ -79,10 +78,11 @@ public class MovieMapper {
         return movieDTOList;
     }
 
-
-    public LocalDate string2LocalDate(String stringDate){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        LocalDate date = LocalDate.parse(stringDate,formatter);
-        return date;
+    public void movieUpdate(MovieEntity entity, MovieDTO dto) {
+        entity.setImage(dto.getImage());
+        entity.setScore(dto.getScore());
+        entity.setTittle(dto.getTittle());
+        entity.setCreationDate(DateUtil.string2LocalDate(dto.getCreationDate()));
+        entity.setGenreId(dto.getGenreId());
     }
 }
