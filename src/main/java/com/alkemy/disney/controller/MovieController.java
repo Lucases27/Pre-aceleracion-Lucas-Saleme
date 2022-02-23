@@ -48,5 +48,10 @@ public class MovieController {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(updatedDTO);
     }
 
+    @PostMapping("/{idMovie}/addCharacter/{idCharacter}")
+    public ResponseEntity<MovieDTO> addCharacter(@PathVariable Long idMovie, @PathVariable Long idCharacter){
+        MovieDTO movieDTO = movieService.addCharacter(idMovie,idCharacter);
+        return ResponseEntity.status(HttpStatus.CREATED).body(movieDTO);
+    }
 
 }

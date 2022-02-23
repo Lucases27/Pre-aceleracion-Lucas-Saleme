@@ -31,7 +31,7 @@ public class CharacterEntity {
 	@ManyToMany(mappedBy = "associatedCharacters",
 			cascade = {
 				CascadeType.PERSIST,
-				CascadeType.MERGE
+				CascadeType.MERGE,
 			})
 	private List<MovieEntity> associatedMovies = new ArrayList<>();
 }

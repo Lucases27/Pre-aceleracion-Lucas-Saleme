@@ -7,9 +7,7 @@ import com.alkemy.disney.entity.CharacterEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 @Component
 public class CharacterMapper {
@@ -48,12 +46,12 @@ public class CharacterMapper {
         return dto;
     }
 
-    public List<CharacterDTO> characterEntityList2DTOList(Collection<CharacterEntity> entities,boolean loadMovies){
-        List<CharacterDTO> dtoList = new ArrayList<>();
+    public Set<CharacterDTO> characterEntityList2DTOList(Collection<CharacterEntity> entities,boolean loadMovies){
+        Set<CharacterDTO> dtoSet = new HashSet<>();
         for (CharacterEntity entity : entities){
-            dtoList.add(this.characterEntity2DTO(entity,loadMovies));
+            dtoSet.add(this.characterEntity2DTO(entity,loadMovies));
         }
-        return dtoList;
+        return dtoSet;
     }
 
     public CharacterBasicDTO characterEntity2DTOBasic(CharacterEntity entity){
@@ -77,5 +75,13 @@ public class CharacterMapper {
         entity.setWeight(dto.getWeight());
         entity.setHistory(dto.getHistory());
         entity.setAge(dto.getAge());
+    }
+
+    public Set<CharacterEntity> characterDTO2EntitySet(Set<CharacterDTO> dtoSet, boolean loadMovies) {
+        Set<CharacterEntity> entitySet = new HashSet<>();
+        for (CharacterDTO dto : dtoSet){
+            entitySet.add(this.characterDTO2Entity(dto,loadMovies));
+        }
+        return entitySet;
     }
 }

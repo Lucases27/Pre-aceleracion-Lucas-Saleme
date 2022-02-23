@@ -32,7 +32,9 @@ public class MovieMapper {
         entity.setScore(dto.getScore());
         entity.setCreationDate(DateUtil.string2LocalDate(dto.getCreationDate()));
         if(loadCharacters){
-            //TODO load characters list.
+            Set<CharacterDTO> dtoSet = dto.getAssociatedCharacters();
+            Set<CharacterEntity> charactersEntitySet = characterMapper.characterDTO2EntitySet(dtoSet,false);
+            entity.setAssociatedCharacters(charactersEntitySet);
         }
         return entity;
     }
@@ -49,7 +51,8 @@ public class MovieMapper {
         movieDTO.setCreationDate(entity.getCreationDate().toString());
         if (loadCharacters){
             Set<CharacterEntity> characterEntitySet = entity.getAssociatedCharacters();
-            List<CharacterDTO> characterDTOList = characterMapper.characterEntityList2DTOList(characterEntitySet,false);
+            Set<CharacterDTO> characterDTOSet = characterMapper.characterEntityList2DTOList(characterEntitySet,false);
+            movieDTO.setAssociatedCharacters(characterDTOSet);
         }
         return movieDTO;
     }
