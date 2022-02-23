@@ -5,8 +5,8 @@ POSTMAN:</br>
 Archivo postman incluido.
 
 ***Alta Movies:** Es requerido el `"genreId":`, por lo tanto para dar de alta a
-una pelicula es necesario crear un genero previamente. Tambien es posible dar de alta personajes y relacionarlos a la pelicula
-al mismo tiempo mediante la propiedad `"associatedCharacters":[{}]`
+una pelicula es necesario crear un genero previamente. Tambien es posible dar de alta personajes
+y relacionarlos a la pelicula al mismo tiempo mediante la propiedad `"associatedCharacters":[{}]`
 
 En caso de no dar de alta personajes de esta forma, se podran dar de alta mediante el endpoint `/characters`
 y luego relacionarlos con la pelicula

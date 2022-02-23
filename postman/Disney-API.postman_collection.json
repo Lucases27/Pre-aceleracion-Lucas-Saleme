@@ -6,215 +6,377 @@
 	},
 	"item": [
 		{
-			"name": "genres",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"comedia\",\r\n    \"image\": \"/img/movies/comedia.jpg\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Movies",
+			"item": [
+				{
+					"name": "movies ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creationDate\" : \"2010/12/21\",\r\n    \"image\": \"/img/movies/pelicula de prueba.jpg\",\r\n    \"score\": 4,\r\n    \"genreId\": 6,\r\n    \"tittle\": \"titulo de prueba\",\r\n    \"associatedCharacters\":\r\n    [\r\n        {\r\n            \"name\": \"personaje de prueba\",\r\n            \"age\": 22,\r\n            \"weight\": 2,\r\n            \"history\": \"test's history\",\r\n            \"image\": \"/img/characters/test.jpg\"\r\n        }\r\n    ]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:8080/genres",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"genres"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "genres",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/genres",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"genres"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "characters",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Pato Lucas\",\r\n    \"age\": 22,\r\n    \"weight\": 2,\r\n    \"history\": \"Pato Lucas's history\",\r\n    \"image\": \"/img/characters/Pato_Lucas.jpg\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "movies/id UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creationDate\" : \"2010/12/21\",\r\n    \"image\": \"/img/movies/pelicula de prueba.jpg\",\r\n    \"score\": 4,\r\n    \"genreId\": 6,\r\n    \"tittle\": \"titulo de prueba22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movies/69",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"69"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:8080/characters",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"characters"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "characters",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/characters",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"characters"
-					],
-					"query": [
-						{
-							"key": "age",
-							"value": "22",
-							"disabled": true
+				{
+					"name": "movies/id DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creationDate\" : \"1993/03/10\",\r\n    \"image\": \"/img/movies/Looney_toons.jpg\",\r\n    \"score\": 5,\r\n    \"tittle\": \"Looney Toons\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "name",
-							"value": "lucas",
-							"disabled": true
-						},
-						{
-							"key": "weight",
-							"value": "1.65",
-							"disabled": true
+						"url": {
+							"raw": "localhost:8080/movies/65",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"65"
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "characters/id",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/characters/12",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"characters",
-						"12"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "characters/id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/characters/5",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"characters",
-						"5"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "characters/id",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Pato Lucas\",\r\n    \"image\": \"/img/characters/pato_lucas.jpg\",\r\n    \"age\": \"19\",\r\n    \"weight\": 22,\r\n    \"history\": \"probando update\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:8080/characters/12",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"characters",
-						"12"
-					]
+				{
+					"name": "movies/id DETAILS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creationDate\" : \"1993/03/10\",\r\n    \"image\": \"/img/movies/Looney_toons.jpg\",\r\n    \"score\": 5,\r\n    \"tittle\": \"Looney Toons\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movies/20",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies/id/addCharacter/id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creationDate\" : \"1993/03/10\",\r\n    \"image\": \"/img/movies/Looney_toons.jpg\",\r\n    \"score\": 5,\r\n    \"tittle\": \"Looney Toons\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movies/20/addCharacter/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"20",
+								"addCharacter",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creationDate\" : \"1993/03/10\",\r\n    \"image\": \"/img/movies/Looney_toons.jpg\",\r\n    \"score\": 5,\r\n    \"tittle\": \"Looney Toons\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movies?name=prueba&genre=6&order=ASC",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "prueba"
+								},
+								{
+									"key": "genre",
+									"value": "6"
+								},
+								{
+									"key": "order",
+									"value": "ASC"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "characters/filters",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/characters/filters?name=Micky&movies&weight",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"characters",
-						"filters"
-					],
-					"query": [
-						{
-							"key": "age",
-							"value": "2",
-							"disabled": true
+			"name": "Characters",
+			"item": [
+				{
+					"name": "characters ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pato Lucas\",\r\n    \"age\": 22,\r\n    \"weight\": 2,\r\n    \"history\": \"Pato Lucas's history\",\r\n    \"image\": \"/img/characters/Pato_Lucas.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "name",
-							"value": "Micky"
-						},
-						{
-							"key": "movies",
-							"value": null
-						},
-						{
-							"key": "weight",
-							"value": null
+						"url": {
+							"raw": "localhost:8080/characters",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters"
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "characters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/characters?age=22&name=mick&weight=1.65",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "age",
+									"value": "22"
+								},
+								{
+									"key": "name",
+									"value": "mick"
+								},
+								{
+									"key": "weight",
+									"value": "1.65"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "characters/id DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/characters/62",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters",
+								"62"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "characters/id  DETAILS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/characters/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "characters/id   UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Wolverine\",\r\n    \"image\": \"/img/characters/Wolverine.jpg\",\r\n    \"age\": \"45\",\r\n    \"weight\": 1.9,\r\n    \"history\": \"Wolverine's history\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/characters/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters",
+								"3"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Genres",
+			"item": [
+				{
+					"name": "genres LIST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/genres",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "genres ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"comedia\",\r\n    \"image\": \"/img/movies/comedia.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/genres",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
