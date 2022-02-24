@@ -1,6 +1,4 @@
 package com.alkemy.disney.controller;
-
-import com.alkemy.disney.dto.CharacterBasicDTO;
 import com.alkemy.disney.dto.MovieBasicDTO;
 import com.alkemy.disney.dto.MovieDTO;
 import com.alkemy.disney.service.MovieService;

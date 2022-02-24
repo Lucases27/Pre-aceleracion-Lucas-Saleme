@@ -1,8 +1,14 @@
 # Disney-API
 Alkemy Challenge - Disney API
 
+BASE DE DATOS:</br>
+Para configurar su DB editar los siguientes campos el archivo: `resources/application.properties`</br>
+spring.datasource.url=jdbc:mysql://localhost:3306/disney</br>
+spring.datasource.username=root</br>
+spring.datasource.password=1234
+
 POSTMAN:</br>
-Archivo postman incluido.
+Archivo postman incluido en `Disney-API/postman`.
 
 ***Alta Movies:** Es requerido el `"genreId":`, por lo tanto para dar de alta a
 una pelicula es necesario crear un genero previamente. Tambien es posible dar de alta personajes

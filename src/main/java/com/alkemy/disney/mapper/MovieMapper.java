@@ -19,8 +19,6 @@ public class MovieMapper {
     @Autowired
     CharacterMapper characterMapper;
 
-
-
     public MovieEntity movieDTO2Entity(MovieDTO dto, boolean loadCharacters){
         MovieEntity entity = new MovieEntity();
         if(dto.getId()!=null){
@@ -38,8 +36,6 @@ public class MovieMapper {
         }
         return entity;
     }
-
-
 
     public MovieDTO movieEntity2DTO(MovieEntity entity, boolean loadCharacters){
         MovieDTO movieDTO = new MovieDTO();

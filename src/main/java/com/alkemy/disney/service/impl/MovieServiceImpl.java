@@ -30,8 +30,6 @@ public class MovieServiceImpl implements MovieService {
 	@Autowired
 	private MovieSpecification movieSpecification;
 	@Autowired
-	private CharacterMapper characterMapper;
-	@Autowired
 	private CharacterRepository characterRepository;
 	
 	
