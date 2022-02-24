@@ -4,6 +4,7 @@ import com.alkemy.disney.dto.CharacterBasicDTO;
 import com.alkemy.disney.dto.CharacterDTO;
 import com.alkemy.disney.dto.CharacterFiltersDTO;
 import com.alkemy.disney.entity.CharacterEntity;
+import com.alkemy.disney.exception.ParamNotFound;
 import com.alkemy.disney.mapper.CharacterMapper;
 import com.alkemy.disney.repository.CharacterRepository;
 import com.alkemy.disney.repository.specification.CharacterSpecification;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -47,6 +49,10 @@ public class CharacterServiceImpl implements CharacterService {
     }
 
     public CharacterDTO getDetails(Long id) {
+        Optional<CharacterEntity> entity = characterRepository.findById(id);
+        if(!entity.isPresent()){
+            throw new ParamNotFound("Character id is not valid");
+        }
         return characterMapper.characterEntity2DTO(characterRepository.getById(id),true);
     }
 
