@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import com.alkemy.disney.dto.GenreDTO;
 import com.alkemy.disney.service.GenreService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,7 +24,7 @@ public class GenreController {
 
 
 	@PostMapping
-	public ResponseEntity<GenreDTO> save(@RequestBody GenreDTO genre) {
+	public ResponseEntity<GenreDTO> save(@Valid @RequestBody GenreDTO genre) {
 		GenreDTO savedGenre = genreService.save(genre);
 		return ResponseEntity.status(HttpStatus.CREATED).body(savedGenre);
 	}

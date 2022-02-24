@@ -1,3 +1,4 @@
+/*
 package com.alkemy.disney.controller;
 
 import com.alkemy.disney.dto.ApiErrorDTO;
@@ -50,3 +51,4 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
 
 }
+*/

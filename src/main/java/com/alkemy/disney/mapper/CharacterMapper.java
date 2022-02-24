@@ -4,6 +4,7 @@ import com.alkemy.disney.dto.CharacterBasicDTO;
 import com.alkemy.disney.dto.CharacterDTO;
 import com.alkemy.disney.dto.MovieDTO;
 import com.alkemy.disney.entity.CharacterEntity;
+import com.alkemy.disney.entity.MovieEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -83,5 +84,17 @@ public class CharacterMapper {
             entitySet.add(this.characterDTO2Entity(dto,loadMovies));
         }
         return entitySet;
+    }
+
+    /**
+     * El fin de este método es borrar la relación en la tabla intermedia,
+     * al borrar un character asociado a alguna movie.
+     * @param characterEntity
+     */
+    public void removeMovies(CharacterEntity characterEntity){
+        List<MovieEntity> movies = characterEntity.getAssociatedMovies();
+        for(MovieEntity movie : movies){
+            movie.getAssociatedCharacters().remove(characterEntity);
+        }
     }
 }

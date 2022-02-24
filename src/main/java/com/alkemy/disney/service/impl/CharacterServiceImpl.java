@@ -4,6 +4,7 @@ import com.alkemy.disney.dto.CharacterBasicDTO;
 import com.alkemy.disney.dto.CharacterDTO;
 import com.alkemy.disney.dto.CharacterFiltersDTO;
 import com.alkemy.disney.entity.CharacterEntity;
+import com.alkemy.disney.entity.MovieEntity;
 import com.alkemy.disney.exception.ParamNotFound;
 import com.alkemy.disney.mapper.CharacterMapper;
 import com.alkemy.disney.repository.CharacterRepository;
@@ -33,14 +34,6 @@ public class CharacterServiceImpl implements CharacterService {
         return characterMapper.characterEntity2DTO(savedEntity,false);
     }
 
-    /**
-     * getAll con param querys.
-     * @param name
-     * @param age
-     * @param weight
-     * @param movies
-     * @return List<CharacterDTO>
-     */
     public List<CharacterBasicDTO> getAll(String name, Long age, Double weight, Set<Long> movies) {
         CharacterFiltersDTO filtersDTO = new CharacterFiltersDTO(name,age,weight,movies);
         List<CharacterEntity> entities = characterRepository.findAll(characterSpecification.getByFilters(filtersDTO));
@@ -69,6 +62,8 @@ public class CharacterServiceImpl implements CharacterService {
     }
 
     public void delete(Long id){
+        CharacterEntity characterEntity = characterRepository.getById(id);
+        characterMapper.removeMovies(characterEntity);
         characterRepository.deleteById(id);
     }
 }

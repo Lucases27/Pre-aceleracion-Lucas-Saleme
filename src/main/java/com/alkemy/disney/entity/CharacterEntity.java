@@ -34,4 +34,14 @@ public class CharacterEntity {
 				CascadeType.MERGE,
 			})
 	private List<MovieEntity> associatedMovies = new ArrayList<>();
+
+	public void addMovie(MovieEntity movie){
+		this.associatedMovies.add(movie);
+		movie.getAssociatedCharacters().add(this);
+	}
+
+	public void removeMovie(MovieEntity movie){
+		this.associatedMovies.remove(movie);
+		movie.getAssociatedCharacters().remove(this);
+	}
 }

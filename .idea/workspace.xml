@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b2494d6-a038-4e3e-9eb2-13ce782144b5" name="Changes" comment="cambio a intellij idea">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/config/SecurityConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/filter/JwtRequestFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/service/JwtUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/service/UserDetailsCustomService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/GenreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/GenreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/RestExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/RestExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/GenreDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/GenreDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/CharacterEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/CharacterEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/mapper/CharacterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/mapper/CharacterMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/CharacterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/CharacterServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,10 +70,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/1disney-main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\sts-4.13.1.RELEASE\Alkemy\Disney-API\src\main\java\com\alkemy\disney\auth" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.alkemy.disney.service.impl" />
       <recent name="com.alkemy.disney.service" />
@@ -94,7 +108,8 @@
       <workItem from="1645423947919" duration="72292000" />
       <workItem from="1645672519372" duration="440000" />
       <workItem from="1645674172708" duration="409000" />
-      <workItem from="1645674619098" duration="6714000" />
+      <workItem from="1645674619098" duration="12473000" />
+      <workItem from="1645722241241" duration="3132000" />
     </task>
     <task id="LOCAL-00001" summary="cambio a intellij idea">
       <created>1645351784465</created>
