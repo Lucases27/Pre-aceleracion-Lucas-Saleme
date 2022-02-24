@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8b2494d6-a038-4e3e-9eb2-13ce782144b5" name="Changes" comment="cambio a intellij idea">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/CharacterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/CharacterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/GenreDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/GenreDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +95,7 @@
       <workItem from="1645423947919" duration="72292000" />
       <workItem from="1645672519372" duration="440000" />
       <workItem from="1645674172708" duration="409000" />
-      <workItem from="1645674619098" duration="3723000" />
+      <workItem from="1645674619098" duration="5904000" />
     </task>
     <task id="LOCAL-00001" summary="cambio a intellij idea">
       <created>1645351784465</created>
