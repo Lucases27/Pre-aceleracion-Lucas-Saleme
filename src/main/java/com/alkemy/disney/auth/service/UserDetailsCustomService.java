@@ -3,6 +3,7 @@ package com.alkemy.disney.auth.service;
 import com.alkemy.disney.auth.dto.UserDTO;
 import com.alkemy.disney.auth.entity.UserEntity;
 import com.alkemy.disney.auth.repository.UserRepository;
+import com.alkemy.disney.service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,9 +17,9 @@ import java.util.Collections;
 public class UserDetailsCustomService implements UserDetailsService {
 
     @Autowired
-    private UserRepository userRepository;/*
+    private UserRepository userRepository;
     @Autowired
-    private EmailService emailService;*/
+    private EmailService emailService;
 
 
     @Override
@@ -35,9 +36,9 @@ public class UserDetailsCustomService implements UserDetailsService {
         userEntity.setUsername(userDTO.getUsername());
         userEntity.setPassword(userDTO.getPassword());
         userEntity = this.userRepository.save(userEntity);
-        /*if(userEntity != null){
+        if(userEntity != null){
             emailService.sendWelcomeEmailTo(userEntity.getUsername());
-        }*/
+        }
         return userEntity != null;
     }
 }
