@@ -1,7 +1,7 @@
-/*package com.alkemy.disney.auth.filter;
+package com.alkemy.disney.auth.filter;
 
-import com.alkemy.disney.auth.service.JwtUtils;*//*
-import com.alkemy.disney.auth.service.UserDetailsCustomService;*//*
+import com.alkemy.disney.auth.service.JwtUtils;
+import com.alkemy.disney.auth.service.UserDetailsCustomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -19,9 +19,9 @@ import java.io.IOException;
 
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {
-*//*
+
     @Autowired
-    private UserDetailsCustomService userDetailsCustomService;*//*
+    private UserDetailsCustomService userDetailsCustomService;
     @Autowired
     private JwtUtils jwtUtils;
     @Autowired
@@ -29,9 +29,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
-
         final String authorizationHeader = request.getHeader("Authorization");
-
         String username = null;
         String jwt = null;
 
@@ -52,4 +50,4 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         }
         chain.doFilter(request,response);
     }
-}*/
+}

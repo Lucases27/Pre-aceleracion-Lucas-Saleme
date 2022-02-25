@@ -4,7 +4,6 @@ import com.alkemy.disney.dto.CharacterBasicDTO;
 import com.alkemy.disney.dto.CharacterDTO;
 import com.alkemy.disney.dto.CharacterFiltersDTO;
 import com.alkemy.disney.entity.CharacterEntity;
-import com.alkemy.disney.entity.MovieEntity;
 import com.alkemy.disney.exception.ParamNotFound;
 import com.alkemy.disney.mapper.CharacterMapper;
 import com.alkemy.disney.repository.CharacterRepository;

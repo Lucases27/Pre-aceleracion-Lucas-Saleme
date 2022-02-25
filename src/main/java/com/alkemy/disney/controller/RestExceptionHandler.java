@@ -1,4 +1,3 @@
-/*
 package com.alkemy.disney.controller;
 
 import com.alkemy.disney.dto.ApiErrorDTO;
@@ -48,7 +47,4 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         ApiErrorDTO apiError = new ApiErrorDTO(HttpStatus.BAD_REQUEST,ex.getLocalizedMessage(),errors);
         return handleExceptionInternal(ex,apiError,headers,apiError.getStatus(),request);
     }
-
-
 }
-*/

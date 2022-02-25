@@ -6,7 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="8b2494d6-a038-4e3e-9eb2-13ce782144b5" name="Changes" comment="cambio a intellij idea">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/filter/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/filter/JwtRequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/service/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/service/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/service/UserDetailsCustomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/service/UserDetailsCustomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/RestExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/RestExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/CharacterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/CharacterServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +74,7 @@
       <recent name="C:\sts-4.13.1.RELEASE\Alkemy\Disney-API\src\main\java\com\alkemy\disney\auth" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.alkemy.disney.auth.dto" />
       <recent name="com.alkemy.disney.service.impl" />
       <recent name="com.alkemy.disney.service" />
       <recent name="com.alkemy.disney.repository" />
@@ -98,7 +106,8 @@
       <workItem from="1645672519372" duration="440000" />
       <workItem from="1645674172708" duration="409000" />
       <workItem from="1645674619098" duration="12473000" />
-      <workItem from="1645722241241" duration="5372000" />
+      <workItem from="1645722241241" duration="9007000" />
+      <workItem from="1645750493526" duration="4266000" />
     </task>
     <task id="LOCAL-00001" summary="cambio a intellij idea">
       <created>1645351784465</created>
@@ -175,6 +184,54 @@
     <option name="LAST_COMMIT_MESSAGE" value="cambio a intellij idea" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/controller/UserAuthController.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/filter/JwtRequestFilter.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/filter/JwtRequestFilter.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/filter/JwtRequestFilter.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/service/UserDetailsCustomService.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/service/UserDetailsCustomService.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/controller/UserAuthController.java</url>
+          <line>40</line>
+          <properties class="com.alkemy.disney.auth.controller.UserAuthController" method="signIn">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest" memberName="response" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="dto.associatedCharacters" />

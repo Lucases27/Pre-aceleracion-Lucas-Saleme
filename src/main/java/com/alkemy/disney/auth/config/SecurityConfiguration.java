@@ -1,11 +1,7 @@
-/*
 package com.alkemy.disney.auth.config;
 
 import com.alkemy.disney.auth.filter.JwtRequestFilter;
-*/
-/*
 import com.alkemy.disney.auth.service.UserDetailsCustomService;
-*//*
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -22,9 +18,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-   */
-/* @Autowired
-    private UserDetailsCustomService userDetailsCustomService;*//*
+ @Autowired
+    private UserDetailsCustomService userDetailsCustomService;
 
     @Autowired
     private JwtRequestFilter jwtRequestFilter;
@@ -55,7 +50,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
-
-
 }
-*/
