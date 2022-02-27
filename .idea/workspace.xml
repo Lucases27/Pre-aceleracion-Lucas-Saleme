@@ -6,13 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="8b2494d6-a038-4e3e-9eb2-13ce782144b5" name="Changes" comment="cambio a intellij idea">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/GenreDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/GenreDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/CharacterEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/CharacterEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/GenreEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/GenreEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/MovieEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/MovieEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/CharacterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/CharacterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/MovieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/CharacterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/CharacterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postman/Disney-API.postman_collection.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/controller/UserAuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/controller/UserAuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/dto/AuthenticationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/dto/AuthenticationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/MovieDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/MovieDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/MovieServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/MovieServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +114,7 @@
       <workItem from="1645674619098" duration="12473000" />
       <workItem from="1645722241241" duration="9007000" />
       <workItem from="1645750493526" duration="10418000" />
-      <workItem from="1645893162570" duration="9839000" />
+      <workItem from="1645893162570" duration="17277000" />
     </task>
     <task id="LOCAL-00001" summary="cambio a intellij idea">
       <created>1645351784465</created>

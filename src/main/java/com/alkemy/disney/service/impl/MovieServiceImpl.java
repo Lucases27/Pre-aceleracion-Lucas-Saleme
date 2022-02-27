@@ -12,6 +12,7 @@ import com.alkemy.disney.repository.CharacterRepository;
 import com.alkemy.disney.repository.GenreRepository;
 import com.alkemy.disney.repository.MovieRepository;
 import com.alkemy.disney.repository.specification.MovieSpecification;
+import com.alkemy.disney.service.CharacterService;
 import com.alkemy.disney.service.GenreService;
 import com.alkemy.disney.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class MovieServiceImpl implements MovieService {
 	@Autowired
 	private MovieSpecification movieSpecification;
 	@Autowired
-	private CharacterRepository characterRepository;
+	private CharacterService characterService;
 	
 	
 	public MovieDTO save(MovieDTO dto) {
@@ -50,8 +51,8 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	public MovieDTO getDetails(Long id) {
-
-		return movieMapper.movieEntity2DTO(movieRepository.getById(id),true);
+		MovieEntity entity = this.findById(id);
+		return movieMapper.movieEntity2DTO(entity,true);
 	}
 
 	@Override
@@ -64,20 +65,21 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	public void deleteMovie(Long id) {
+		this.findById(id);
 		movieRepository.deleteById(id);
 	}
 
 	public MovieDTO updateMovie(Long id, MovieDTO dto) {
-		MovieEntity entity = movieRepository.getById(id);
+		MovieEntity entity = this.findById(id);
 		movieMapper.movieUpdate(entity,dto);
 		return movieMapper.movieEntity2DTO(movieRepository.save(entity),false);
 	}
 
 	@Override
 	public MovieDTO addCharacter(Long idMovie, Long idCharacter) {
-		MovieEntity movie = movieRepository.getById(idMovie);
+		MovieEntity movie = this.findById(idMovie);
 		Set<CharacterEntity> characterSet = movie.getAssociatedCharacters();
-		characterSet.add(characterRepository.getById(idCharacter));
+		characterSet.add(characterService.findById((idCharacter)));
 		movie.setAssociatedCharacters(characterSet);
 
 		return movieMapper.movieEntity2DTO(movieRepository.save(movie),true);

@@ -4,7 +4,10 @@ import com.alkemy.disney.entity.CharacterEntity;
 import com.alkemy.disney.entity.MovieEntity;
 import lombok.Getter;
 import lombok.Setter;
+import org.aspectj.apache.bcel.classfile.Module;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;

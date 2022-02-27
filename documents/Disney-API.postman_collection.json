@@ -1,0 +1,2753 @@
+{
+	"info": {
+		"_postman_id": "04e41bfe-8826-4d74-abb1-e7de04122076",
+		"name": "Disney-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "movies ADD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creationDate\" : \"2010/12/21\",\r\n    \"image\": \"/img/movies/x_men_2.jpg\",\r\n    \"score\": 4,\r\n    \"genreId\": 1,\r\n    \"tittle\": \"X MEN 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Movie Success Case 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"creationDate\" : \"2010/12/21\",\r\n    \"image\": \"/img/movies/x_men_3.jpg\",\r\n    \"score\": 2,\r\n    \"genreId\": 1,\r\n    \"tittle\": \"X MEN 3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 14:51:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"tittle\": \"X MEN 3\",\n    \"image\": \"/img/movies/x_men_3.jpg\",\n    \"score\": 2,\n    \"creationDate\": \"2010-12-21\",\n    \"genreId\": 1,\n    \"associatedCharacters\": []\n}"
+						},
+						{
+							"name": "Add Movie Success Case 2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"creationDate\": \"2010/12/21\",\r\n    \"image\": \"/img/movies/x_men_2.jpg\",\r\n    \"score\": 4,\r\n    \"genreId\": 1,\r\n    \"tittle\": \"X MEN 2\",\r\n    \"associatedCharacters\": [\r\n        {\r\n            \"name\": \"Professor X\",\r\n            \"age\": 66,\r\n            \"weight\": 1.66,\r\n            \"history\": \"professor_x's history\",\r\n            \"image\": \"/img/characters/professor_x.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"Mastermind\",\r\n            \"age\": 45,\r\n            \"weight\": 1.92,\r\n            \"history\": \"mastermind's history\",\r\n            \"image\": \"/img/characters/mastermind.jpg\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 14:08:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"id\": 5,\n    \"tittle\": \"X MEN 2\",\n    \"image\": \"/img/movies/x_men_2.jpg\",\n    \"score\": 4,\n    \"creationDate\": \"2010-12-21\",\n    \"genreId\": 1,\n    \"associatedCharacters\": [\n        {\n            \"id\": 12,\n            \"name\": \"Professor X\",\n            \"image\": \"/img/characters/professor_x.jpg\",\n            \"age\": 66,\n            \"weight\": 1.66,\n            \"history\": \"professor_x's history\",\n            \"associatedMovies\": []\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Mastermind\",\n            \"image\": \"/img/characters/mastermind.jpg\",\n            \"age\": 45,\n            \"weight\": 1.92,\n            \"history\": \"mastermind's history\",\n            \"associatedMovies\": []\n        }\n    ]\n}"
+						},
+						{
+							"name": "Add Internal Server Error Case",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"creationDate\" : \"2010/12/21\",\r\n    \"image\": \"/img/movies/x_men_2.jpg\",\r\n    \"score\": 4,\r\n    \"tittle\": \"X MEN 2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:03:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2022-02-27T15:03:19.122+00:00\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"trace\": \"org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement\\r\\n\\tat org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:276)\\r\\n\\tat org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233)\\r\\n\\tat org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551)\\r\\n\\tat org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)\\r\\n\\tat org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242)\\r\\n\\tat org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)\\r\\n\\tat com.sun.proxy.$Proxy128.save(Unknown Source)\\r\\n\\tat com.alkemy.disney.service.impl.MovieServiceImpl.save(MovieServiceImpl.java:41)\\r\\n\\tat com.alkemy.disney.controller.MovieController.save(MovieController.java:30)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)\\r\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:681)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)\\r\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:764)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)\\r\\n\\tat org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)\\r\\n\\tat org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)\\r\\n\\tat org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)\\r\\n\\tat org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat com.alkemy.disney.auth.filter.JwtRequestFilter.doFilterInternal(JwtRequestFilter.java:51)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)\\r\\n\\tat org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)\\r\\n\\tat org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)\\r\\n\\tat org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)\\r\\n\\tat org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)\\r\\n\\tat org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)\\r\\n\\tat org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:835)\\r\\nCaused by: org.hibernate.exception.ConstraintViolationException: could not execute statement\\r\\n\\tat org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:59)\\r\\n\\tat org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:37)\\r\\n\\tat org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)\\r\\n\\tat org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)\\r\\n\\tat org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)\\r\\n\\tat org.hibernate.dialect.identity.GetGeneratedKeysDelegate.executeAndExtract(GetGeneratedKeysDelegate.java:58)\\r\\n\\tat org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:43)\\r\\n\\tat org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3279)\\r\\n\\tat org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3885)\\r\\n\\tat org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:84)\\r\\n\\tat org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645)\\r\\n\\tat org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282)\\r\\n\\tat org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263)\\r\\n\\tat org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317)\\r\\n\\tat org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:330)\\r\\n\\tat org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:287)\\r\\n\\tat org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193)\\r\\n\\tat org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:123)\\r\\n\\tat org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:185)\\r\\n\\tat org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:128)\\r\\n\\tat org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)\\r\\n\\tat org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)\\r\\n\\tat org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:760)\\r\\n\\tat org.hibernate.internal.SessionImpl.persist(SessionImpl.java:746)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\\r\\n\\tat org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362)\\r\\n\\tat com.sun.proxy.$Proxy114.persist(Unknown Source)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\\r\\n\\tat org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311)\\r\\n\\tat com.sun.proxy.$Proxy114.persist(Unknown Source)\\r\\n\\tat org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:630)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\\r\\n\\tat org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289)\\r\\n\\tat org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137)\\r\\n\\tat org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121)\\r\\n\\tat org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:529)\\r\\n\\tat org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)\\r\\n\\tat org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:639)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:163)\\r\\n\\tat org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)\\r\\n\\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)\\r\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)\\r\\n\\t... 100 more\\r\\nCaused by: java.sql.SQLIntegrityConstraintViolationException: Column 'genre_id' cannot be null\\r\\n\\tat com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)\\r\\n\\tat com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)\\r\\n\\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)\\r\\n\\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)\\r\\n\\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)\\r\\n\\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)\\r\\n\\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)\\r\\n\\tat com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)\\r\\n\\tat com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)\\r\\n\\tat org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)\\r\\n\\t... 153 more\\r\\n\",\n    \"message\": \"could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement\",\n    \"path\": \"/movies\"\n}"
+						}
+					]
+				},
+				{
+					"name": "movies/id UPDATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"creationDate\" : \"1999/06/24\",\r\n    \"image\": \"/img/movies/x_men_2.jpg\",\r\n    \"score\": 5,\r\n    \"genreId\": 1,\r\n    \"tittle\": \"X MEN 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movies/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Success Case",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"creationDate\" : \"1999/06/24\",\r\n    \"image\": \"/img/movies/x_men_2.jpg\",\r\n    \"score\": 5,\r\n    \"genreId\": 1,\r\n    \"tittle\": \"X MEN 2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"4"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:15:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"tittle\": \"X MEN 2\",\n    \"image\": \"/img/movies/x_men_2.jpg\",\n    \"score\": 5,\n    \"creationDate\": \"1999-06-24\",\n    \"associatedCharacters\": [],\n    \"genreId\": 1\n}"
+						},
+						{
+							"name": "Update Internal Server Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"creationDate\" : \"1999/06/24\",\r\n    \"image\": \"/img/movies/x_men_2.jpg\",\r\n    \"score\": 5,\r\n    \"tittle\": \"X MEN 2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"4"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:15:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2022-02-27T15:15:55.264+00:00\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"trace\": \"org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement\\r\\n\\tat org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:276)\\r\\n\\tat org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233)\\r\\n\\tat org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:566)\\r\\n\\tat org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)\\r\\n\\tat org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)\\r\\n\\tat org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654)\\r\\n\\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407)\\r\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\\r\\n\\tat org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)\\r\\n\\tat com.sun.proxy.$Proxy128.save(Unknown Source)\\r\\n\\tat com.alkemy.disney.service.impl.MovieServiceImpl.updateMovie(MovieServiceImpl.java:75)\\r\\n\\tat com.alkemy.disney.controller.MovieController.update(MovieController.java:46)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)\\r\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:684)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)\\r\\n\\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:764)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)\\r\\n\\tat org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)\\r\\n\\tat org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)\\r\\n\\tat org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)\\r\\n\\tat org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat com.alkemy.disney.auth.filter.JwtRequestFilter.doFilterInternal(JwtRequestFilter.java:51)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)\\r\\n\\tat org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)\\r\\n\\tat org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)\\r\\n\\tat org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)\\r\\n\\tat org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)\\r\\n\\tat org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)\\r\\n\\tat org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)\\r\\n\\tat org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:835)\\r\\nCaused by: org.hibernate.exception.ConstraintViolationException: could not execute statement\\r\\n\\tat org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:59)\\r\\n\\tat org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:37)\\r\\n\\tat org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)\\r\\n\\tat org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)\\r\\n\\tat org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)\\r\\n\\tat org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:46)\\r\\n\\tat org.hibernate.persister.entity.AbstractEntityPersister.update(AbstractEntityPersister.java:3571)\\r\\n\\tat org.hibernate.persister.entity.AbstractEntityPersister.updateOrInsert(AbstractEntityPersister.java:3438)\\r\\n\\tat org.hibernate.persister.entity.AbstractEntityPersister.update(AbstractEntityPersister.java:3852)\\r\\n\\tat org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:201)\\r\\n\\tat org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)\\r\\n\\tat org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)\\r\\n\\tat java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)\\r\\n\\tat org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)\\r\\n\\tat org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344)\\r\\n\\tat org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)\\r\\n\\tat org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)\\r\\n\\tat org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1402)\\r\\n\\tat org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:493)\\r\\n\\tat org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3285)\\r\\n\\tat org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2420)\\r\\n\\tat org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449)\\r\\n\\tat org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)\\r\\n\\tat org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)\\r\\n\\tat org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)\\r\\n\\tat org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)\\r\\n\\tat org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562)\\r\\n\\t... 107 more\\r\\nCaused by: java.sql.SQLIntegrityConstraintViolationException: Column 'genre_id' cannot be null\\r\\n\\tat com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)\\r\\n\\tat com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)\\r\\n\\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)\\r\\n\\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1098)\\r\\n\\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1046)\\r\\n\\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1371)\\r\\n\\tat com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1031)\\r\\n\\tat com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)\\r\\n\\tat com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)\\r\\n\\tat org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)\\r\\n\\t... 129 more\\r\\n\",\n    \"message\": \"could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement\",\n    \"path\": \"/movies/4\"\n}"
+						}
+					]
+				},
+				{
+					"name": "movies/id DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movies/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Success Case",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies/8",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"8"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:17:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Delete Bad Request Case",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies/83",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"83"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:16:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Movie id is not valid\",\n    \"errors\": [\n        \"Param Not Found\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "movies/id DETAILS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movies/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Details Success Case",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"1"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:17:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"tittle\": \"X Men\",\n    \"image\": \"/img/movies/x_men.jpg\",\n    \"score\": 5,\n    \"creationDate\": \"2010-12-21\",\n    \"associatedCharacters\": [\n        {\n            \"id\": 3,\n            \"name\": \"Jean Grey\",\n            \"image\": \"/img/characters/jean_grey.jpg\",\n            \"age\": 64,\n            \"weight\": 1.81,\n            \"history\": \"jean_grey's history\",\n            \"associatedMovies\": []\n        },\n        {\n            \"id\": 1,\n            \"name\": \"rogue\",\n            \"image\": \"/img/characters/rogue.jpg\",\n            \"age\": 29,\n            \"weight\": 1.73,\n            \"history\": \"rogue's history\",\n            \"associatedMovies\": []\n        },\n        {\n            \"id\": 2,\n            \"name\": \"gambit\",\n            \"image\": \"/img/characters/gambit.jpg\",\n            \"age\": 33,\n            \"weight\": 1.83,\n            \"history\": \"gambit's history\",\n            \"associatedMovies\": []\n        }\n    ],\n    \"genreId\": 1\n}"
+						},
+						{
+							"name": "Get Details Bad Request Case",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies/133",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"133"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:18:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Movie id is not valid\",\n    \"errors\": [\n        \"Param Not Found\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "movies/id/addCharacter/id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movies/1/addCharacter/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1",
+								"addCharacter",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Character Success Case",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies/1/addCharacter/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"1",
+										"addCharacter",
+										"3"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:19:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"tittle\": \"X Men\",\n    \"image\": \"/img/movies/x_men.jpg\",\n    \"score\": 5,\n    \"creationDate\": \"2010-12-21\",\n    \"associatedCharacters\": [\n        {\n            \"id\": 1,\n            \"name\": \"rogue\",\n            \"image\": \"/img/characters/rogue.jpg\",\n            \"age\": 29,\n            \"weight\": 1.73,\n            \"history\": \"rogue's history\",\n            \"associatedMovies\": []\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Jean Grey\",\n            \"image\": \"/img/characters/jean_grey.jpg\",\n            \"age\": 64,\n            \"weight\": 1.81,\n            \"history\": \"jean_grey's history\",\n            \"associatedMovies\": []\n        },\n        {\n            \"id\": 2,\n            \"name\": \"gambit\",\n            \"image\": \"/img/characters/gambit.jpg\",\n            \"age\": 33,\n            \"weight\": 1.83,\n            \"history\": \"gambit's history\",\n            \"associatedMovies\": []\n        }\n    ],\n    \"genreId\": 1\n}"
+						},
+						{
+							"name": "Add Character Bad Request Case",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies/1/addCharacter/33",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"1",
+										"addCharacter",
+										"33"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:22:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Character id is not valid\",\n    \"errors\": [\n        \"Param Not Found\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "movies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/movies?order=ASC",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "prueba",
+									"disabled": true
+								},
+								{
+									"key": "genre",
+									"value": "6",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "ASC"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Movies Success Case",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "prueba",
+											"disabled": true
+										},
+										{
+											"key": "genre",
+											"value": "6",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": "ASC",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:22:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"tittle\": \"X Men\",\n        \"image\": \"/img/movies/x_men.jpg\",\n        \"creationDate\": \"2010-12-21\"\n    },\n    {\n        \"tittle\": \"X MEN 2\",\n        \"image\": \"/img/movies/x_men_2.jpg\",\n        \"creationDate\": \"1999-06-24\"\n    },\n    {\n        \"tittle\": \"X MEN 3\",\n        \"image\": \"/img/movies/x_men_3.jpg\",\n        \"creationDate\": \"2010-12-21\"\n    }\n]"
+						},
+						{
+							"name": "Get Movies Bad Request Case",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies?genre=a",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "a",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": "ASC",
+											"disabled": true
+										},
+										{
+											"key": "genre",
+											"value": "a"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:23:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Characters",
+			"item": [
+				{
+					"name": "characters ADD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Wolverine\",\r\n    \"age\": 39,\r\n    \"weight\": 1.85,\r\n    \"history\": \"Wolverine's history\",\r\n    \"image\": \"/img/characters/Wolverine.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/characters",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Character Success Case",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Storm\",\r\n    \"age\": 42,\r\n    \"weight\": 1.88,\r\n    \"history\": \"Storm's history\",\r\n    \"image\": \"/img/characters/Storm.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/characters",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"characters"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:24:00 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 13,\n    \"name\": \"Storm\",\n    \"image\": \"/img/characters/Storm.jpg\",\n    \"age\": 42,\n    \"weight\": 1.88,\n    \"history\": \"Storm's history\",\n    \"associatedMovies\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "characters",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/characters",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "age",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "weight",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Characters Success Case",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/characters",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"characters"
+									],
+									"query": [
+										{
+											"key": "age",
+											"value": "22",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "mick",
+											"disabled": true
+										},
+										{
+											"key": "weight",
+											"value": "1.65",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:25:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"name\": \"rogue\",\n        \"image\": \"/img/characters/rogue.jpg\"\n    },\n    {\n        \"name\": \"gambit\",\n        \"image\": \"/img/characters/gambit.jpg\"\n    },\n    {\n        \"name\": \"Jean Grey\",\n        \"image\": \"/img/characters/jean_grey.jpg\"\n    },\n    {\n        \"name\": \"Professor X\",\n        \"image\": \"/img/characters/professor_x.jpg\"\n    },\n    {\n        \"name\": \"Mastermind\",\n        \"image\": \"/img/characters/mastermind.jpg\"\n    },\n    {\n        \"name\": \"Storm\",\n        \"image\": \"/img/characters/Storm.jpg\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "characters/id DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/characters/12",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters",
+								"12"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Character Success Case",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/characters/14",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"characters",
+										"14"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:26:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Detele Character Bad Request Case",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/characters/12",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"characters",
+										"12"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:25:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Character id is not valid\",\n    \"errors\": [\n        \"Param Not Found\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "characters/id  DETAILS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/characters/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Details Success Case",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/characters/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"characters",
+										"3"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:26:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"name\": \"Jean Grey\",\n    \"image\": \"/img/characters/jean_grey.jpg\",\n    \"age\": 64,\n    \"weight\": 1.81,\n    \"history\": \"jean_grey's history\",\n    \"associatedMovies\": [\n        {\n            \"id\": 1,\n            \"tittle\": \"X Men\",\n            \"image\": \"/img/movies/x_men.jpg\",\n            \"score\": 5,\n            \"creationDate\": \"2010-12-21\",\n            \"associatedCharacters\": [],\n            \"genreId\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "characters/id   UPDATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Wolverine\",\r\n    \"image\": \"/img/characters/Wolverine.jpg\",\r\n    \"age\": \"45\",\r\n    \"weight\": 1.9,\r\n    \"history\": \"Wolverine's history\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/characters/333",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters",
+								"333"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Character Bad Request Case",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Wolverine\",\r\n    \"image\": \"/img/characters/Wolverine.jpg\",\r\n    \"age\": \"45\",\r\n    \"weight\": 1.9,\r\n    \"history\": \"Wolverine's history\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/characters/333",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"characters",
+										"333"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:26:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Character id is not valid\",\n    \"errors\": [\n        \"Param Not Found\"\n    ]\n}"
+						},
+						{
+							"name": "Update Character Success Case",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Wolverine\",\r\n    \"image\": \"/img/characters/Wolverine.jpg\",\r\n    \"age\": \"44\",\r\n    \"weight\": 1.9,\r\n    \"history\": \"Wolverine's history\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/characters/15",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"characters",
+										"15"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:28:00 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 15,\n    \"name\": \"Wolverine\",\n    \"image\": \"/img/characters/Wolverine.jpg\",\n    \"age\": 44,\n    \"weight\": 1.9,\n    \"history\": \"Wolverine's history\",\n    \"associatedMovies\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Genres",
+			"item": [
+				{
+					"name": "genres LIST",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMdWNhc0VtaWxpYW5vMjFAaG90bWFpbC5jb20iLCJleHAiOjE2NDU3OTA5NjksImlhdCI6MTY0NTc1NDk2OX0.0Za24qhw4k8OtFy6pypwm9zu7tTODTnLw_0tnGtqBgk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8080/genres",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Genres Success Case",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMdWNhc0VtaWxpYW5vMjFAaG90bWFpbC5jb20iLCJleHAiOjE2NDU3OTA5NjksImlhdCI6MTY0NTc1NDk2OX0.0Za24qhw4k8OtFy6pypwm9zu7tTODTnLw_0tnGtqBgk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "localhost:8080/genres",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"genres"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:28:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Superheros\",\n        \"image\": \"/src/img/Superheros.jpg\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Action\",\n        \"image\": \"/src/img/Action.jpg\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Drama\",\n        \"image\": \"/src/img/Drama.jpg\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Comedy\",\n        \"image\": \"/src/img/Comedy.jpg\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Terror\",\n        \"image\": \"/src/img/Terror.jpg\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Adventure\",\n        \"image\": \"/src/img/Adventure.jpg\"\n    },\n    {\n        \"id\": 8,\n        \"name\": \"Fantasy\",\n        \"image\": \"/src/img/Fantasy.jpg\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "genres ADD",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Adventure\",\r\n    \"image\": \"/src/img/Adventure.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/genres",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Genre Success Cases",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Western\",\r\n    \"image\": \"/src/img/Western.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/genres",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"genres"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:28:55 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9,\n    \"name\": \"Western\",\n    \"image\": \"/src/img/Western.jpg\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"example\",\r\n    \"password\": \"password1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Success Case",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"example@gmail.com\",\r\n    \"password\": \"password1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:29:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Register Bad Request Case",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"example\",\r\n    \"password\": \"password1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:32:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.alkemy.disney.auth.dto.AuthenticationResponse> com.alkemy.disney.auth.controller.UserAuthController.signUp(com.alkemy.disney.auth.dto.UserDTO) throws java.lang.Exception: [Field error in object 'userDTO' on field 'username': rejected value [example]; codes [Email.userDTO.username,Email.username,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userDTO.username,username]; arguments []; default message [username],[Ljavax.validation.constraints.Pattern$Flag;@7c04a52e,.*]; default message [Username must be an email]] \",\n    \"errors\": [\n        \"username: Username must be an email\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"example@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login Success Case",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"example@gmail.com\",\r\n    \"password\": \"password1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"login"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:32:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"jwt\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbG1hLmNzMzEwMkBnbWFpbC5jb20iLCJleHAiOjE2NDYwMTE5NzIsImlhdCI6MTY0NTk3NTk3Mn0.qDNXFYPGno8-DgDCTNzgZ5byX-fxA6CFSsji921DkVM\"\n}"
+						},
+						{
+							"name": "Login Forbidden Case",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"example@gmail.com\",\r\n    \"password\": \"IncorrectPassword1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"login"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:33:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Login Bad Request Case",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"example\",\r\n    \"password\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"login"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Feb 2022 15:34:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.alkemy.disney.auth.dto.AuthenticationResponse> com.alkemy.disney.auth.controller.UserAuthController.signIn(com.alkemy.disney.auth.dto.AuthenticationRequest) throws java.lang.Exception: [Field error in object 'authenticationRequest' on field 'username': rejected value [example]; codes [Email.authenticationRequest.username,Email.username,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [authenticationRequest.username,username]; arguments []; default message [username],[Ljavax.validation.constraints.Pattern$Flag;@7c04a52e,.*]; default message [Username must be an email]] \",\n    \"errors\": [\n        \"username: Username must be an email\"\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "Authorization",
+			"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc"
+		}
+	]
+}
