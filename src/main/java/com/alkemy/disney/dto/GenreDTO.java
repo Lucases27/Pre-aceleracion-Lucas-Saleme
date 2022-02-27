@@ -11,8 +11,6 @@ import javax.validation.constraints.Size;
 @Setter
 public class GenreDTO {
 	private Long id;
-	@Email(message = "error")
 	private String name;
-	@Size(min = 1)
 	private String image;
 }

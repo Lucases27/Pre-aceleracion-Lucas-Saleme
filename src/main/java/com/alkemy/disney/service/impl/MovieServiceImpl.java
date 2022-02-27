@@ -4,6 +4,7 @@ import com.alkemy.disney.dto.*;
 import com.alkemy.disney.entity.CharacterEntity;
 import com.alkemy.disney.entity.GenreEntity;
 import com.alkemy.disney.entity.MovieEntity;
+import com.alkemy.disney.exception.ParamNotFound;
 import com.alkemy.disney.mapper.CharacterMapper;
 import com.alkemy.disney.mapper.GenreMapper;
 import com.alkemy.disney.mapper.MovieMapper;
@@ -18,6 +19,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -48,7 +50,17 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	public MovieDTO getDetails(Long id) {
+
 		return movieMapper.movieEntity2DTO(movieRepository.getById(id),true);
+	}
+
+	@Override
+	public MovieEntity findById(Long id) {
+		Optional<MovieEntity> optional = movieRepository.findById(id);
+		if(!optional.isPresent()){
+			throw new ParamNotFound("Movie id is not valid");
+		}
+		return optional.get();
 	}
 
 	public void deleteMovie(Long id) {

@@ -33,6 +33,11 @@ public class CharacterServiceImpl implements CharacterService {
         return characterMapper.characterEntity2DTO(savedEntity,false);
     }
 
+    public CharacterDTO getDetails(Long id) {
+        CharacterEntity entity = this.findById(id);
+        return characterMapper.characterEntity2DTO(entity,true);
+    }
+
     public List<CharacterBasicDTO> getAll(String name, Long age, Double weight, Set<Long> movies) {
         CharacterFiltersDTO filtersDTO = new CharacterFiltersDTO(name,age,weight,movies);
         List<CharacterEntity> entities = characterRepository.findAll(characterSpecification.getByFilters(filtersDTO));
@@ -40,28 +45,23 @@ public class CharacterServiceImpl implements CharacterService {
         return dtoList;
     }
 
-    public CharacterDTO getDetails(Long id) {
-        Optional<CharacterEntity> entity = characterRepository.findById(id);
-        if(!entity.isPresent()){
+    public CharacterEntity findById(Long id) {
+        Optional<CharacterEntity> optional = characterRepository.findById(id);
+        if(!optional.isPresent()){
             throw new ParamNotFound("Character id is not valid");
         }
-        return characterMapper.characterEntity2DTO(characterRepository.getById(id),true);
-    }
-
-    public CharacterDTO getById(Long id) {
-        CharacterEntity characterEntity = characterRepository.getById(id);
-        return characterMapper.characterEntity2DTO(characterEntity,false);
+        return optional.get();
     }
 
 
     public CharacterDTO update(Long id, CharacterDTO characterDTO) {
-        CharacterEntity characterEntity = characterRepository.getById(id);
+        CharacterEntity characterEntity = this.findById(id);
         characterMapper.characterEntityUpdate(characterEntity,characterDTO);
         return characterMapper.characterEntity2DTO(characterRepository.save(characterEntity),false);
     }
 
     public void delete(Long id){
-        CharacterEntity characterEntity = characterRepository.getById(id);
+        CharacterEntity characterEntity = this.findById(id);
         characterMapper.removeMovies(characterEntity);
         characterRepository.deleteById(id);
     }
