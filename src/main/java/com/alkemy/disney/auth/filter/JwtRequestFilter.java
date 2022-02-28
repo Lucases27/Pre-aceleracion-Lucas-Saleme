@@ -3,12 +3,10 @@ package com.alkemy.disney.auth.filter;
 import com.alkemy.disney.auth.service.JwtUtils;
 import com.alkemy.disney.auth.service.UserDetailsCustomService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -25,10 +23,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     private UserDetailsCustomService userDetailsCustomService;
     @Autowired
     private JwtUtils jwtUtils;
-    @Autowired
-    private AuthenticationManager authenticationManager;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
@@ -44,11 +39,13 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         if(username != null && SecurityContextHolder.getContext().getAuthentication() == null){
             UserDetails userDetails = this.userDetailsCustomService.loadUserByUsername(username);
 
-            if(jwtUtils.validateToken(jwt,userDetails)){
+            if(jwtUtils.validateToken(jwt, userDetails)){
                 UsernamePasswordAuthenticationToken authReq =
-                        new UsernamePasswordAuthenticationToken(userDetails.getUsername(),userDetails.getPassword());
-                Authentication auth = authenticationManager.authenticate(authReq);
-                SecurityContextHolder.getContext().setAuthentication(auth);
+                        new UsernamePasswordAuthenticationToken(
+                                userDetails,null,null);
+
+                authReq.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                SecurityContextHolder.getContext().setAuthentication(authReq);
             }
         }
         chain.doFilter(request,response);

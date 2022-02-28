@@ -3,6 +3,7 @@ package com.alkemy.disney.auth.config;
 import com.alkemy.disney.auth.filter.JwtRequestFilter;
 import com.alkemy.disney.auth.service.UserDetailsCustomService;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -14,13 +15,12 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
  @Autowired
@@ -28,23 +28,24 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private JwtRequestFilter jwtRequestFilter;
+    private Argon2PasswordEncoder argon2PasswordEncoder = new Argon2PasswordEncoder();
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-        auth.userDetailsService(userDetailsCustomService);
+        auth.userDetailsService(userDetailsCustomService).passwordEncoder(argon2PasswordEncoder);
     }
 
     @Bean
     public AuthenticationProvider authProvider (){
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(userDetailsCustomService);
-        provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
+        provider.setPasswordEncoder(argon2PasswordEncoder);
         return provider;
     }
 
     @Bean
     public PasswordEncoder passwordEncoder(){
-        return NoOpPasswordEncoder.getInstance();
+        return argon2PasswordEncoder;
     }
 
     @Override
@@ -62,5 +63,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+    }
+
+    public void setArgon2PasswordEncoder(Argon2PasswordEncoder argon2PasswordEncoder) {
+        this.argon2PasswordEncoder = argon2PasswordEncoder;
     }
 }

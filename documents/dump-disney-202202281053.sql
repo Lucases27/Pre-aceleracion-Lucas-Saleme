@@ -27,7 +27,7 @@ CREATE TABLE `genero` (
   `image` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -144,7 +144,7 @@ CREATE TABLE `user` (
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_sb8bbouer5wak8vyiiy4pf2bx` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,7 +153,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (14,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$xJlU0Cx2YEiHcQo89FgpgQ$f50SCQBFYqJADZxbrTTUqy1OutJUX4DM+GuSsiPXT2o','lukaku@gmail.com'),(15,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$UVS/zgm4DXA60oxf2DrpMA$Up8ZxyrwsHpOWOxHxzKTi9Ymu7jaEPsf9K/doJKQ3c0','LucasEmiliano21@hotmail.com'),(16,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$wMgsK7JYMXovxOxnfd82Nw$tPOtIshw7ed4cs76woUG2VP6/Kin9Qh56/wCpbuFP1A','admin@DisneyChallenge.com'),(17,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$lRor1rjXM+DyWcnsAqoSCw$tqf7veEk8yNyE/Gzvwlxoiznj7FYcNu+JS4ORHs/Q2I','Support@DisneyChallenge.com'),(18,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$gTxlfG28Y0XRlykrKkrtFQ$0R8mSSjnS9hkfbvp7MShOXX2j8spfB16Djvcpr989nA','RRHH@DisneyChallenge.com'),(19,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$aRWISx/+dRPx7N5PsjGxjA$yITx/2Nja2x0HnuschaLlwr+JBxBb58aa5GlCchsM4Y','example@example.com'),(21,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$Ir7Jaym8JfU46GHxdsJDAQ$P+tSN4QL5WQtjmRQFCSsOQ0SsYFFXt0x6C39PlRlkgc','example2@example.com'),(23,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$SPkG54ssq6NwT/atAZD8dg$RAWZfgLLcF9kthKKf9mAuIHcD+WFwzaRwEpVEROdKXA','example3@example.com'),(25,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$0hjTL8pT5p2POTejPu3D2w$nmop2SXIE9zXSGxQdJ4lgnVQsoE6XzFuqspM1QQZ8/M','example4@example.com'),(26,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$T4TeMlN/vMxpz1abX/dOcQ$OnM3bgyAvViPBi3CEnfC2rOQij5CvoR9ZmnRNQKP6ls','example5@example.com'),(27,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$OHsBz2AQW+R767yG2fdIdg$HPBJcRKads9eGthqbB2Bapf9L2r+SmfZrSB1QKuyoQM','example6@example.com'),(28,_binary '',_binary '',_binary '',_binary '','$2a$10$WNlpv7fUBy/AitqBEui0uehpV46M26YWurdJBon3H8PHdPgxZKbFi','example7@example.com'),(29,_binary '',_binary '',_binary '',_binary '','$2a$10$1cegVI0a9Sm/WSDIvXilE.zqZbg0DoHNRfb9XqEhJbGcgIn/VMVaS','example8@example.com'),(30,_binary '',_binary '',_binary '',_binary '','example1','example9@example.com'),(31,_binary '',_binary '',_binary '',_binary '','example1','example10@example.com');
+INSERT INTO `user` VALUES (14,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$xJlU0Cx2YEiHcQo89FgpgQ$f50SCQBFYqJADZxbrTTUqy1OutJUX4DM+GuSsiPXT2o','lukaku@gmail.com'),(15,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$UVS/zgm4DXA60oxf2DrpMA$Up8ZxyrwsHpOWOxHxzKTi9Ymu7jaEPsf9K/doJKQ3c0','LucasEmiliano21@hotmail.com'),(16,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$wMgsK7JYMXovxOxnfd82Nw$tPOtIshw7ed4cs76woUG2VP6/Kin9Qh56/wCpbuFP1A','admin@DisneyChallenge.com'),(17,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$lRor1rjXM+DyWcnsAqoSCw$tqf7veEk8yNyE/Gzvwlxoiznj7FYcNu+JS4ORHs/Q2I','Support@DisneyChallenge.com'),(18,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$gTxlfG28Y0XRlykrKkrtFQ$0R8mSSjnS9hkfbvp7MShOXX2j8spfB16Djvcpr989nA','RRHH@DisneyChallenge.com'),(19,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$aRWISx/+dRPx7N5PsjGxjA$yITx/2Nja2x0HnuschaLlwr+JBxBb58aa5GlCchsM4Y','example@example.com'),(21,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$Ir7Jaym8JfU46GHxdsJDAQ$P+tSN4QL5WQtjmRQFCSsOQ0SsYFFXt0x6C39PlRlkgc','example2@example.com'),(23,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$SPkG54ssq6NwT/atAZD8dg$RAWZfgLLcF9kthKKf9mAuIHcD+WFwzaRwEpVEROdKXA','example3@example.com'),(25,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$0hjTL8pT5p2POTejPu3D2w$nmop2SXIE9zXSGxQdJ4lgnVQsoE6XzFuqspM1QQZ8/M','example4@example.com'),(26,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$T4TeMlN/vMxpz1abX/dOcQ$OnM3bgyAvViPBi3CEnfC2rOQij5CvoR9ZmnRNQKP6ls','example5@example.com'),(27,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$OHsBz2AQW+R767yG2fdIdg$HPBJcRKads9eGthqbB2Bapf9L2r+SmfZrSB1QKuyoQM','example6@example.com'),(28,_binary '',_binary '',_binary '',_binary '','$2a$10$WNlpv7fUBy/AitqBEui0uehpV46M26YWurdJBon3H8PHdPgxZKbFi','example7@example.com'),(29,_binary '',_binary '',_binary '',_binary '','$2a$10$1cegVI0a9Sm/WSDIvXilE.zqZbg0DoHNRfb9XqEhJbGcgIn/VMVaS','example8@example.com'),(30,_binary '',_binary '',_binary '',_binary '','example1','example9@example.com'),(31,_binary '',_binary '',_binary '',_binary '','example1','example10@example.com'),(32,_binary '',_binary '',_binary '',_binary '','password1','CEO@Disney.com'),(33,_binary '',_binary '',_binary '',_binary '','$argon2id$v=19$m=4096,t=3,p=1$XBW/i7Y/eQVC8VlP64f0EA$Yhdxsom5ijXnxigpttSu/thy/nsAG5TZZp8y8vkpj2Q','CEO1@Disney.com');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -170,4 +170,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-27 22:20:57
+-- Dump completed on 2022-02-28 10:53:45
