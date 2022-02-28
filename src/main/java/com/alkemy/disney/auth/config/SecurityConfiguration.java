@@ -29,24 +29,22 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private JwtRequestFilter jwtRequestFilter;
 
-    private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-        auth.userDetailsService(userDetailsCustomService).passwordEncoder(bCryptPasswordEncoder);
+        auth.userDetailsService(userDetailsCustomService);
     }
 
     @Bean
     public AuthenticationProvider authProvider (){
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(userDetailsCustomService);
-        provider.setPasswordEncoder(bCryptPasswordEncoder);
+        provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
         return provider;
     }
 
     @Bean
     public PasswordEncoder passwordEncoder(){
-        return bCryptPasswordEncoder;
+        return NoOpPasswordEncoder.getInstance();
     }
 
     @Override
