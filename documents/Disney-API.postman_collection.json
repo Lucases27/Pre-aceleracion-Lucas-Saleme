@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "04e41bfe-8826-4d74-abb1-e7de04122076",
 		"name": "Disney-API",
+		"description": "Documentación de la API.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -16,7 +17,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJleGFtcGxlMTBAZXhhbXBsZS5jb20iLCJleHAiOjE2NDYwNDcwMDIsImlhdCI6MTY0NjAxMTAwMn0.pLEUGbfOtzVm19vuYdZg866PcmSgLIHDWT3sBgniffI",
 									"type": "string"
 								}
 							]
@@ -25,7 +26,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"creationDate\" : \"2010/12/21\",\r\n    \"image\": \"/img/movies/x_men_2.jpg\",\r\n    \"score\": 4,\r\n    \"genreId\": 1,\r\n    \"tittle\": \"X MEN 2\"\r\n}",
+							"raw": "{\r\n    \"creationDate\" : \"1987/03/01\",\r\n    \"image\": \"/img/movies/looney_tunes.jpg\",\r\n    \"score\": 5,\r\n    \"genreId\": 6,\r\n    \"tittle\": \"Looney Tunes\",\r\n    \"associatedCharacters\": [\r\n        {\r\n            \"name\": \"Buggs Bunny\",\r\n            \"age\": 18,\r\n            \"weight\": 1.98,\r\n            \"history\": \"Buggs bunny's history\",\r\n            \"image\": \"/img/characters/buggs_bunny.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"Elmer Fudd\",\r\n            \"age\": 45,\r\n            \"weight\": 1.59,\r\n            \"history\": \"Elmer's history\",\r\n            \"image\": \"/img/characters/elmer_fudd.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"Marvin the martian\",\r\n            \"age\": 98,\r\n            \"weight\": 1.20,\r\n            \"history\": \"Marvin's history\",\r\n            \"image\": \"/img/characters/marvin.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"Pepé Le Pew\",\r\n            \"age\": 19,\r\n            \"weight\": 0.84,\r\n            \"history\": \"Pepé's history\",\r\n            \"image\": \"/img/characters/pepé_le_pew.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"Speedy Gonzales\",\r\n            \"age\": 24,\r\n            \"weight\": 0.33,\r\n            \"history\": \"Speedy's history\",\r\n            \"image\": \"/img/characters/speedy_gonzales.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"Wile E. Coyote\",\r\n            \"age\": 15,\r\n            \"weight\": 1.89,\r\n            \"history\": \"Wile's history\",\r\n            \"image\": \"/img/characters/wile_coyote.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"Tasmanian Devil\",\r\n            \"age\": 13,\r\n            \"weight\": 1.51,\r\n            \"history\": \"Tasmanian Devil's history\",\r\n            \"image\": \"/img/characters/tasmanian_devil.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"Yosemite Sam\",\r\n            \"age\": 48,\r\n            \"weight\": 1.44,\r\n            \"history\": \"Yosemite Sam's history\",\r\n            \"image\": \"/img/characters/yosemite_sam.jpg\"\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1991,7 +1992,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWNhc2VzMkBnbWFpbC5jb20iLCJleHAiOjE2NDU5OTkzMzEsImlhdCI6MTY0NTk2MzMzMX0.9Yala7irOBz8_Wv2Wk3DnII8I1NqUQlgCwrP62RT3Mc",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWtha3VAZ21haWwuY29tIiwiZXhwIjoxNjQ2MDQ0NjE5LCJpYXQiOjE2NDYwMDg2MTl9.KHvF-IxtAIwJ0yMEWs3OzxseoyTYW1tFUG3Wx4CeBPs",
 									"type": "string"
 								}
 							]
@@ -2104,7 +2105,14 @@
 					"name": "genres ADD",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJleGFtcGxlMTBAZXhhbXBsZS5jb20iLCJleHAiOjE2NDYwNDcwMDIsImlhdCI6MTY0NjAxMTAwMn0.pLEUGbfOtzVm19vuYdZg866PcmSgLIHDWT3sBgniffI",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [
@@ -2445,7 +2453,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"example@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"raw": "{\r\n    \"username\": \"lukaku@gmail.com\",\r\n    \"password\": \"abcdefgh\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
