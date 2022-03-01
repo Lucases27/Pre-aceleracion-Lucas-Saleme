@@ -48,7 +48,6 @@ public class EmailServiceImpl implements EmailService {
             request.setEndpoint("mail/send");
             request.setBody(mail.build());
             Response response = sg.api(request);
-            System.out.println("RESPONSE:"+response.getBody());
         }catch (IOException e){
             e.getMessage();
         }
