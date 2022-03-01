@@ -21,7 +21,7 @@ Para importar una Base de datos con datos ya cargados incluí un archivo .sql en
 Herramientas --> Restore database
 
 
-### ⚡ Endpoints: 
+### ☁ Endpoints: 
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=slim&logo=Postman&logoColor=white
 )
 
@@ -48,6 +48,10 @@ ya que Character no es dueña de la asociación, por ello es que en el método r
 removemos las asociaciones que existen manualmente.
 
 
+### 🌐 Envío de emails:
+Para utilizar la funcionalidad de envío de emails se deberá utilizar una API KEY propia, ya que por cuestiones de seguridad SendGrid no permite que esta esté publicada en el código dentro de un repositorio en github. 
+
+Para ello deberá declarar una variable de Environment llamada EMAIL_API_KEY y setear la key respectiva, también deberá editar la propiedad alkemy.disney.email.sender dentro de application.properties con su propio correo registrado en Sendgrid.
 
 
 
