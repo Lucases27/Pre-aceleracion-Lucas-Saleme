@@ -22,7 +22,12 @@ public class GenreController {
 		return ResponseEntity.ok().body(genres);
 	}
 
-
+	@GetMapping("/{id}")
+	public ResponseEntity<GenreDTO> getById(@PathVariable Long id){
+		GenreDTO genre = genreService.get(id);
+		return ResponseEntity.ok().body(genre);
+	}
+	
 	@PostMapping
 	public ResponseEntity<GenreDTO> save(@Valid @RequestBody GenreDTO genre) {
 		GenreDTO savedGenre = genreService.save(genre);

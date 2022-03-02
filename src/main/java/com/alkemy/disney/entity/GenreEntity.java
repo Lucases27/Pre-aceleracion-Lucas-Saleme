@@ -4,6 +4,9 @@ import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name="genero")
 @Getter
@@ -15,4 +18,11 @@ public class GenreEntity {
 	private Long id;
 	private String name;
 	private String image;
+
+	@OneToMany(mappedBy = "genre",
+			cascade = {
+					CascadeType.PERSIST,
+					CascadeType.MERGE,
+			})
+	private Set<MovieEntity> associatedMovies = new HashSet<>();
 }
