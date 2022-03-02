@@ -663,7 +663,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDRU8xQERpc25leS5jb20iLCJleHAiOjE2NDYwOTE4OTIsImlhdCI6MTY0NjA1NTg5Mn0.FwdAlM-h8PtKa_mg8tl6zd_cdALMFswIpFrOlv3mvPY",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDRU8zQERpc25leS5jb20iLCJleHAiOjE2NDYxMzg4MzIsImlhdCI6MTY0NjEwMjgzMn0.ctPkA8JRPZcaKjNVWuHDU1HuLLjJeN2Vx46eWBdwpeM",
 									"type": "string"
 								}
 							]
@@ -847,14 +847,14 @@
 					]
 				},
 				{
-					"name": "movies/id/addCharacter/id",
+					"name": "movies/id/character/id ADD Character",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDRU8xQERpc25leS5jb20iLCJleHAiOjE2NDYwOTE4OTIsImlhdCI6MTY0NjA1NTg5Mn0.FwdAlM-h8PtKa_mg8tl6zd_cdALMFswIpFrOlv3mvPY",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWtha3VAZ21haWwuY29tIiwiZXhwIjoxNjQ2MjM3NTg4LCJpYXQiOjE2NDYyMDE1ODh9.n6-iaqJl6yO-ybMdzL8-MOOhQrESFD6o8XBfUqMQQWw",
 									"type": "string"
 								}
 							]
@@ -871,16 +871,16 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/movies/1/addCharacter/3",
+							"raw": "localhost:8080/movies/4/character/2",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"movies",
-								"1",
-								"addCharacter",
-								"3"
+								"4",
+								"character",
+								"2"
 							]
 						}
 					},
@@ -900,7 +900,7 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8080/movies/1/addCharacter/3",
+									"raw": "localhost:8080/movies/1/character/3",
 									"host": [
 										"localhost"
 									],
@@ -908,7 +908,7 @@
 									"path": [
 										"movies",
 										"1",
-										"addCharacter",
+										"character",
 										"3"
 									]
 								}
@@ -980,7 +980,7 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8080/movies/1/addCharacter/33",
+									"raw": "localhost:8080/movies/1/character/33",
 									"host": [
 										"localhost"
 									],
@@ -988,7 +988,7 @@
 									"path": [
 										"movies",
 										"1",
-										"addCharacter",
+										"character",
 										"33"
 									]
 								}
@@ -1040,6 +1040,86 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"Character id is not valid\",\n    \"errors\": [\n        \"Param Not Found\"\n    ]\n}"
+						},
+						{
+							"name": "Add Character Success Case 2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movies/4/character/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										"4",
+										"character",
+										"2"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Mar 2022 06:13:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"tittle\": \"X MEN 2\",\n    \"image\": \"/img/movies/x_men_2.jpg\",\n    \"score\": 5,\n    \"creationDate\": \"1999-06-24\",\n    \"genreId\": 1,\n    \"associatedCharacters\": [\n        {\n            \"id\": 8,\n            \"name\": \"Professor X\",\n            \"image\": \"/img/characters/professor_x.jpg\",\n            \"age\": 66,\n            \"weight\": 1.66,\n            \"history\": \"professor_x's history\",\n            \"associatedMovies\": []\n        },\n        {\n            \"id\": 2,\n            \"name\": \"gambit\",\n            \"image\": \"/img/characters/gambit.jpg\",\n            \"age\": 33,\n            \"weight\": 1.83,\n            \"history\": \"gambit's history\",\n            \"associatedMovies\": []\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Mastermind\",\n            \"image\": \"/img/characters/mastermind.jpg\",\n            \"age\": 45,\n            \"weight\": 1.92,\n            \"history\": \"mastermind's history\",\n            \"associatedMovies\": []\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -1407,7 +1487,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDRU8xQERpc25leS5jb20iLCJleHAiOjE2NDYwOTE4OTIsImlhdCI6MTY0NjA1NTg5Mn0.FwdAlM-h8PtKa_mg8tl6zd_cdALMFswIpFrOlv3mvPY",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWtha3VAZ21haWwuY29tIiwiZXhwIjoxNjQ2MjM3NTg4LCJpYXQiOjE2NDYyMDE1ODh9.n6-iaqJl6yO-ybMdzL8-MOOhQrESFD6o8XBfUqMQQWw",
 									"type": "string"
 								}
 							]
@@ -1415,7 +1495,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/characters",
+							"raw": "localhost:8080/characters?movies=5,6,7,4",
 							"host": [
 								"localhost"
 							],
@@ -1426,18 +1506,22 @@
 							"query": [
 								{
 									"key": "age",
-									"value": "",
+									"value": "24",
 									"disabled": true
 								},
 								{
 									"key": "name",
-									"value": "",
+									"value": "Spee",
 									"disabled": true
 								},
 								{
 									"key": "weight",
-									"value": "",
+									"value": "1.9",
 									"disabled": true
+								},
+								{
+									"key": "movies",
+									"value": "5,6,7,4"
 								}
 							]
 						}
@@ -1992,7 +2076,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDRU8xQERpc25leS5jb20iLCJleHAiOjE2NDYwOTE4OTIsImlhdCI6MTY0NjA1NTg5Mn0.FwdAlM-h8PtKa_mg8tl6zd_cdALMFswIpFrOlv3mvPY",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDRU8zQERpc25leS5jb20iLCJleHAiOjE2NDYxMzg4MzIsImlhdCI6MTY0NjEwMjgzMn0.ctPkA8JRPZcaKjNVWuHDU1HuLLjJeN2Vx46eWBdwpeM",
 									"type": "string"
 								}
 							]
