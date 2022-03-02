@@ -35,7 +35,7 @@ public class MovieEntity {
 	private Long score;
 	private boolean deleted = Boolean.FALSE;
 	
-	@ManyToOne(fetch = FetchType.EAGER, 
+	@ManyToOne(fetch = FetchType.EAGER,
 			cascade = {
 				CascadeType.PERSIST,
 				CascadeType.MERGE

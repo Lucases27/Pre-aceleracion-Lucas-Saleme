@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -71,6 +72,13 @@ public class MovieMapper {
 
     public List<MovieDTO> entityList2DtoList(List<MovieEntity> entities, boolean loadCharacters) {
         List<MovieDTO> movieDTOList = new ArrayList<>();
+        for (MovieEntity entity : entities){
+            movieDTOList.add(this.entity2Dto(entity,loadCharacters));
+        }
+        return movieDTOList;
+    }
+    public Set<MovieDTO> entityList2DtoSet(Set<MovieEntity> entities, boolean loadCharacters) {
+        Set<MovieDTO> movieDTOList = new HashSet<>();
         for (MovieEntity entity : entities){
             movieDTOList.add(this.entity2Dto(entity,loadCharacters));
         }

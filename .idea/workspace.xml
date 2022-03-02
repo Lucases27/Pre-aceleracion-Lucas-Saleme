@@ -7,8 +7,11 @@
     <list default="true" id="8b2494d6-a038-4e3e-9eb2-13ce782144b5" name="Changes" comment="cambio a intellij idea">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/GenreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/GenreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/GenreDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/GenreDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/GenreEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/GenreEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/GenreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/GenreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/MovieEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/MovieEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/mapper/GenreMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/mapper/GenreMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/mapper/MovieMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/mapper/MovieMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/GenreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/GenreServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +118,9 @@
       <workItem from="1646002216841" duration="11148000" />
       <workItem from="1646051576408" duration="4559000" />
       <workItem from="1646100271929" duration="2625000" />
-      <workItem from="1646171731610" duration="12971000" />
+      <workItem from="1646171731610" duration="13087000" />
+      <workItem from="1646213407600" duration="2257000" />
+      <workItem from="1646215702646" duration="3252000" />
     </task>
     <task id="LOCAL-00001" summary="cambio a intellij idea">
       <created>1645351784465</created>
@@ -192,6 +197,29 @@
     <option name="LAST_COMMIT_MESSAGE" value="cambio a intellij idea" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/alkemy/disney/mapper/MovieMapper.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/alkemy/disney/mapper/MovieMapper.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/alkemy/disney/mapper/MovieMapper.java</url>
+          <line>40</line>
+          <properties class="com.alkemy.disney.mapper.MovieMapper" method="entity2Dto">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest" memberName="response" />

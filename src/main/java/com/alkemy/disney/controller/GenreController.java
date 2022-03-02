@@ -27,7 +27,7 @@ public class GenreController {
 		GenreDTO genre = genreService.get(id);
 		return ResponseEntity.ok().body(genre);
 	}
-	
+
 	@PostMapping
 	public ResponseEntity<GenreDTO> save(@Valid @RequestBody GenreDTO genre) {
 		GenreDTO savedGenre = genreService.save(genre);

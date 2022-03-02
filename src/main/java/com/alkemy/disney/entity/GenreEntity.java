@@ -19,10 +19,17 @@ public class GenreEntity {
 	private String name;
 	private String image;
 
-	@OneToMany(mappedBy = "genre",
+	@OneToMany(mappedBy = "genre", fetch = FetchType.LAZY,
 			cascade = {
 					CascadeType.PERSIST,
 					CascadeType.MERGE,
 			})
 	private Set<MovieEntity> associatedMovies = new HashSet<>();
+
+	public void addMovie(MovieEntity movie){
+		if(!associatedMovies.contains(movie)){
+			associatedMovies.add(movie);
+			movie.setGenreId(this.getId());
+		}
+	}
 }
