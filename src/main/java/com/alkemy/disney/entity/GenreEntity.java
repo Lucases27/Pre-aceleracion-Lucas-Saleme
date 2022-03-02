@@ -25,4 +25,11 @@ public class GenreEntity {
 					CascadeType.MERGE,
 			})
 	private Set<MovieEntity> associatedMovies = new HashSet<>();
+
+	public void addMovie(MovieEntity movie) {
+		if (!associatedMovies.contains(movie)) {
+			associatedMovies.add(movie);
+			movie.setGenreId(this.getId());
+		}
+	}
 }

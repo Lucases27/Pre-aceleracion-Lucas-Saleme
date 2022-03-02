@@ -1,6 +1,5 @@
 package com.alkemy.disney.service.impl;
 
-import com.alkemy.disney.entity.MovieEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +35,7 @@ public class GenreServiceImpl implements GenreService {
 		return result;
 	}
 
-	public GenreDTO get(Long id){
+	public GenreDTO getById(Long id){
 		Optional<GenreEntity> genre = genreRepository.findById(id);
 		return genreMapper.entity2Dto(genre.get());
 	}
