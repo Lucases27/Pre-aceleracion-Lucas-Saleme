@@ -28,21 +28,33 @@ public class CharacterServiceImpl implements CharacterService {
 
 
     public CharacterDTO save(CharacterDTO dto){
-        CharacterEntity characterEntity = characterMapper.characterDTO2Entity(dto,false);
+        CharacterEntity characterEntity = characterMapper.dto2Entity(dto,false);
         CharacterEntity savedEntity = characterRepository.save(characterEntity);
-        return characterMapper.characterEntity2DTO(savedEntity,false);
+        return characterMapper.entity2Dto(savedEntity,false);
     }
 
     public CharacterDTO getDetails(Long id) {
         CharacterEntity entity = this.findById(id);
-        return characterMapper.characterEntity2DTO(entity,true);
+        return characterMapper.entity2Dto(entity,true);
     }
 
     public List<CharacterBasicDTO> getAll(String name, Long age, Double weight, Set<Long> movies) {
         CharacterFiltersDTO filtersDTO = new CharacterFiltersDTO(name,age,weight,movies);
         List<CharacterEntity> entities = characterRepository.findAll(characterSpecification.getByFilters(filtersDTO));
-        List<CharacterBasicDTO> dtoList = characterMapper.characterEntity2DTOBasicList(entities);
+        List<CharacterBasicDTO> dtoList = characterMapper.entityCol2BasicDtoList(entities);
         return dtoList;
+    }
+
+    public CharacterDTO update(Long id, CharacterDTO characterDTO) {
+        CharacterEntity characterEntity = this.findById(id);
+        characterMapper.updateValues(characterEntity,characterDTO);
+        return characterMapper.entity2Dto(characterRepository.save(characterEntity),false);
+    }
+
+    public void delete(Long id){
+        CharacterEntity characterEntity = this.findById(id);
+        characterMapper.removeMoviesFromEntity(characterEntity);
+        characterRepository.deleteById(id);
     }
 
     public CharacterEntity findById(Long id) {
@@ -51,18 +63,5 @@ public class CharacterServiceImpl implements CharacterService {
             throw new ParamNotFound("Character id is not valid");
         }
         return optional.get();
-    }
-
-
-    public CharacterDTO update(Long id, CharacterDTO characterDTO) {
-        CharacterEntity characterEntity = this.findById(id);
-        characterMapper.characterEntityUpdate(characterEntity,characterDTO);
-        return characterMapper.characterEntity2DTO(characterRepository.save(characterEntity),false);
-    }
-
-    public void delete(Long id){
-        CharacterEntity characterEntity = this.findById(id);
-        characterMapper.removeMovies(characterEntity);
-        characterRepository.deleteById(id);
     }
 }

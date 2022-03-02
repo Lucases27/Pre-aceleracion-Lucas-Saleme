@@ -19,7 +19,7 @@ public class MovieMapper {
     @Autowired
     CharacterMapper characterMapper;
 
-    public MovieEntity movieDTO2Entity(MovieDTO dto, boolean loadCharacters){
+    public MovieEntity dto2Entity(MovieDTO dto, boolean loadCharacters){
         MovieEntity entity = new MovieEntity();
         if(dto.getId()!=null){
             entity.setId(dto.getId());
@@ -31,13 +31,13 @@ public class MovieMapper {
         entity.setCreationDate(DateUtil.string2LocalDate(dto.getCreationDate()));
         if(loadCharacters){
             Set<CharacterDTO> dtoSet = dto.getAssociatedCharacters();
-            Set<CharacterEntity> charactersEntitySet = characterMapper.characterDTO2EntitySet(dtoSet,false);
+            Set<CharacterEntity> charactersEntitySet = characterMapper.dtoSet2EntitySet(dtoSet,false);
             entity.setAssociatedCharacters(charactersEntitySet);
         }
         return entity;
     }
 
-    public MovieDTO movieEntity2DTO(MovieEntity entity, boolean loadCharacters){
+    public MovieDTO entity2Dto(MovieEntity entity, boolean loadCharacters){
         MovieDTO movieDTO = new MovieDTO();
         movieDTO.setId(entity.getId());
         movieDTO.setImage(entity.getImage());
@@ -47,13 +47,13 @@ public class MovieMapper {
         movieDTO.setCreationDate(entity.getCreationDate().toString());
         if (loadCharacters){
             Set<CharacterEntity> characterEntitySet = entity.getAssociatedCharacters();
-            Set<CharacterDTO> characterDTOSet = characterMapper.characterEntityList2DTOList(characterEntitySet,false);
+            Set<CharacterDTO> characterDTOSet = characterMapper.entityList2DtoList(characterEntitySet,false);
             movieDTO.setAssociatedCharacters(characterDTOSet);
         }
         return movieDTO;
     }
 
-    public MovieBasicDTO movieEntity2DTOBasic(MovieEntity entity){
+    public MovieBasicDTO entity2BasicDto(MovieEntity entity){
         MovieBasicDTO basicDTO = new MovieBasicDTO();
         basicDTO.setImage(entity.getImage());
         basicDTO.setTittle(entity.getTittle());
@@ -61,23 +61,23 @@ public class MovieMapper {
         return basicDTO;
     }
 
-    public List<MovieBasicDTO> movieEntityList2DTOBasicList(List<MovieEntity> entityList){
+    public List<MovieBasicDTO> entityList2BasicDtoList(List<MovieEntity> entityList){
         List<MovieBasicDTO> basicDTOList = new ArrayList<>();
         for (MovieEntity entity : entityList){
-            basicDTOList.add(this.movieEntity2DTOBasic(entity));
+            basicDTOList.add(this.entity2BasicDto(entity));
         }
         return basicDTOList;
     }
 
-    public List<MovieDTO> movieEntityList2DTOList(List<MovieEntity> entities, boolean loadCharacters) {
+    public List<MovieDTO> entityList2DtoList(List<MovieEntity> entities, boolean loadCharacters) {
         List<MovieDTO> movieDTOList = new ArrayList<>();
         for (MovieEntity entity : entities){
-            movieDTOList.add(this.movieEntity2DTO(entity,loadCharacters));
+            movieDTOList.add(this.entity2Dto(entity,loadCharacters));
         }
         return movieDTOList;
     }
 
-    public void movieUpdate(MovieEntity entity, MovieDTO dto) {
+    public void updateValues(MovieEntity entity, MovieDTO dto) {
         entity.setImage(dto.getImage());
         entity.setScore(dto.getScore());
         entity.setTittle(dto.getTittle());

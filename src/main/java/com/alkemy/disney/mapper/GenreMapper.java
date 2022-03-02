@@ -11,14 +11,14 @@ import java.util.List;
 @Component
 public class GenreMapper {
 	
-	public GenreEntity genreDTO2Entity(GenreDTO dto) {
+	public GenreEntity dto2Entity(GenreDTO dto) {
 		GenreEntity genreEntity = new GenreEntity();
 		genreEntity.setImage(dto.getImage());
 		genreEntity.setName(dto.getName());
 		return genreEntity;
 	}
 	
-	public GenreDTO genreEntity2DTO(GenreEntity entity) {
+	public GenreDTO entity2Dto(GenreEntity entity) {
 		GenreDTO genreDTO = new GenreDTO();
 		genreDTO.setId(entity.getId());
 		genreDTO.setImage(entity.getImage());
@@ -26,10 +26,10 @@ public class GenreMapper {
 		return genreDTO;
 	}
 
-	public List<GenreDTO> genreEntityList2DTOList(List<GenreEntity> entities){
+	public List<GenreDTO> entityList2DtoList(List<GenreEntity> entities){
 		List<GenreDTO> dtoList = new ArrayList<>();
 		for (GenreEntity entity : entities){
-			dtoList.add(this.genreEntity2DTO(entity));
+			dtoList.add(this.entity2Dto(entity));
 		}
 		return dtoList;
 	}

@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -22,7 +21,7 @@ public class MovieController {
             @RequestParam(required = false) String name,
             @RequestParam(required = false) Long genre,
             @RequestParam(required = false) String order){
-        return ResponseEntity.status(HttpStatus.OK).body(movieService.getAllMovies(name,genre,order));
+        return ResponseEntity.status(HttpStatus.OK).body(movieService.getAll(name,genre,order));
     }
 
     @PostMapping
@@ -37,19 +36,19 @@ public class MovieController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
-        movieService.deleteMovie(id);
+        movieService.delete(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<MovieDTO> update(@PathVariable Long id, @RequestBody MovieDTO dto){
-        MovieDTO updatedDTO = movieService.updateMovie(id,dto);
+        MovieDTO updatedDTO = movieService.update(id,dto);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(updatedDTO);
     }
 
-    @PostMapping("/{idMovie}/addCharacter/{idCharacter}")
+    @PostMapping("/{idMovie}/character/{idCharacter}")
     public ResponseEntity<MovieDTO> addCharacter(@PathVariable Long idMovie, @PathVariable Long idCharacter){
-        MovieDTO movieDTO = movieService.addCharacter(idMovie,idCharacter);
+        MovieDTO movieDTO = movieService.addCharacterToMovie(idMovie,idCharacter);
         return ResponseEntity.status(HttpStatus.CREATED).body(movieDTO);
     }
 

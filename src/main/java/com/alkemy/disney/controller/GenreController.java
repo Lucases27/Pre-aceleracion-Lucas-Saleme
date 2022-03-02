@@ -18,7 +18,7 @@ public class GenreController {
 
 	@GetMapping
 	public ResponseEntity<List<GenreDTO>> getAll(){
-		List<GenreDTO> genres = genreService.getAllGenres();
+		List<GenreDTO> genres = genreService.getAll();
 		return ResponseEntity.ok().body(genres);
 	}
 

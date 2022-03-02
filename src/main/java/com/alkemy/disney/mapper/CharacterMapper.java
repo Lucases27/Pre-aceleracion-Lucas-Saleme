@@ -16,7 +16,7 @@ public class CharacterMapper {
     @Autowired
     MovieMapper movieMapper;
 
-    public CharacterEntity characterDTO2Entity(CharacterDTO dto, boolean loadMovies){
+    public CharacterEntity dto2Entity(CharacterDTO dto, boolean loadMovies){
         CharacterEntity entity = new CharacterEntity();
         if(dto.getId()!=null){
             entity.setId(dto.getId());
@@ -27,12 +27,12 @@ public class CharacterMapper {
         entity.setName(dto.getName());
         entity.setWeight(dto.getWeight());
         if(loadMovies){
-            //TODO load movie list.
+            //TODO load movie list, if necessary.
         }
         return entity;
     }
 
-    public CharacterDTO characterEntity2DTO(CharacterEntity entity, boolean loadMovies){
+    public CharacterDTO entity2Dto(CharacterEntity entity, boolean loadMovies){
         CharacterDTO dto = new CharacterDTO();
         dto.setId(entity.getId());
         dto.setAge(entity.getAge());
@@ -41,36 +41,36 @@ public class CharacterMapper {
         dto.setHistory(entity.getHistory());
         dto.setWeight(entity.getWeight());
         if(loadMovies){
-            List<MovieDTO> movieDTOList = movieMapper.movieEntityList2DTOList(entity.getAssociatedMovies(),false);
+            List<MovieDTO> movieDTOList = movieMapper.entityList2DtoList(entity.getAssociatedMovies(),false);
             dto.setAssociatedMovies(movieDTOList);
         }
         return dto;
     }
 
-    public Set<CharacterDTO> characterEntityList2DTOList(Collection<CharacterEntity> entities,boolean loadMovies){
+    public Set<CharacterDTO> entityList2DtoList(Collection<CharacterEntity> entities, boolean loadMovies){
         Set<CharacterDTO> dtoSet = new HashSet<>();
         for (CharacterEntity entity : entities){
-            dtoSet.add(this.characterEntity2DTO(entity,loadMovies));
+            dtoSet.add(this.entity2Dto(entity,loadMovies));
         }
         return dtoSet;
     }
 
-    public CharacterBasicDTO characterEntity2DTOBasic(CharacterEntity entity){
+    public CharacterBasicDTO entity2BasicDto(CharacterEntity entity){
         CharacterBasicDTO dto = new CharacterBasicDTO();
         dto.setImage(entity.getImage());
         dto.setName(entity.getName());
         return dto;
     }
 
-    public List<CharacterBasicDTO> characterEntity2DTOBasicList(Collection<CharacterEntity> entities) {
+    public List<CharacterBasicDTO> entityCol2BasicDtoList(Collection<CharacterEntity> entities) {
         List<CharacterBasicDTO> dtoList = new ArrayList<>();
         for (CharacterEntity entity : entities){
-            dtoList.add(this.characterEntity2DTOBasic(entity));
+            dtoList.add(this.entity2BasicDto(entity));
         }
         return dtoList;
     }
 
-    public void characterEntityUpdate(CharacterEntity entity, CharacterDTO dto) {
+    public void updateValues(CharacterEntity entity, CharacterDTO dto) {
         entity.setName(dto.getName());
         entity.setImage(dto.getImage());
         entity.setWeight(dto.getWeight());
@@ -78,10 +78,10 @@ public class CharacterMapper {
         entity.setAge(dto.getAge());
     }
 
-    public Set<CharacterEntity> characterDTO2EntitySet(Set<CharacterDTO> dtoSet, boolean loadMovies) {
+    public Set<CharacterEntity> dtoSet2EntitySet(Set<CharacterDTO> dtoSet, boolean loadMovies) {
         Set<CharacterEntity> entitySet = new HashSet<>();
         for (CharacterDTO dto : dtoSet){
-            entitySet.add(this.characterDTO2Entity(dto,loadMovies));
+            entitySet.add(this.dto2Entity(dto,loadMovies));
         }
         return entitySet;
     }
@@ -91,7 +91,7 @@ public class CharacterMapper {
      * al borrar un character asociado a alguna movie.
      * @param characterEntity
      */
-    public void removeMovies(CharacterEntity characterEntity){
+    public void removeMoviesFromEntity(CharacterEntity characterEntity){
         List<MovieEntity> movies = characterEntity.getAssociatedMovies();
         for(MovieEntity movie : movies){
             movie.getAssociatedCharacters().remove(characterEntity);
