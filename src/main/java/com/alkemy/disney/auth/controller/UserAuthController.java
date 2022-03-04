@@ -39,18 +39,7 @@ public class UserAuthController {
 
     @PostMapping("/login")
     public ResponseEntity<AuthenticationResponse> signIn(@Valid @RequestBody AuthenticationRequest authRequest) throws Exception{
-        UserDetails userDetails;
-        try {
-            Authentication auth = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword())
-            );
-            userDetails = (UserDetails) auth.getPrincipal();
-        }catch (BadCredentialsException e){
-            throw new Exception("Incorrect username or password",e);
-        }
-
-        String jwt = jwtTokenUtil.generateToken(userDetails);
-        return ResponseEntity.ok(new AuthenticationResponse(jwt));
+        return ResponseEntity.ok(userDetailsCustomService.signIn(authRequest));
     }
 
 }

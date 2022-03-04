@@ -27,7 +27,6 @@ public class CharacterController {
 
     @GetMapping
     public ResponseEntity<List<CharacterBasicDTO>> getAll(
-            @Valid
             @RequestParam(required = false) String name,
             @RequestParam(required = false) Long age,
             @RequestParam(required = false) Double weight,

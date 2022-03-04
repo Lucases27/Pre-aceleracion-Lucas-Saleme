@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b2494d6-a038-4e3e-9eb2-13ce782144b5" name="Changes" comment="cambio a intellij idea" />
+    <list default="true" id="8b2494d6-a038-4e3e-9eb2-13ce782144b5" name="Changes" comment="cambio a intellij idea">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/controller/UserAuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/controller/UserAuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/service/UserDetailsCustomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/service/UserDetailsCustomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/CharacterController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +117,7 @@
       <workItem from="1646171731610" duration="12971000" />
       <workItem from="1646341949363" duration="3894000" />
       <workItem from="1646382650885" duration="2470000" />
-      <workItem from="1646412866503" duration="463000" />
+      <workItem from="1646412866503" duration="2031000" />
     </task>
     <task id="LOCAL-00001" summary="cambio a intellij idea">
       <created>1645351784465</created>
