@@ -8,5 +8,4 @@ public interface GenreService {
 	
 	GenreDTO save(GenreDTO dto);
 	List<GenreDTO> getAll();
-    GenreDTO getById(Long id);
 }

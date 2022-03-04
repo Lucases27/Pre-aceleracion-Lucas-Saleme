@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Set;
 
@@ -19,13 +20,14 @@ public class CharacterController {
     private CharacterService characterService;
 
     @PostMapping
-    public ResponseEntity<CharacterDTO> save(@RequestBody CharacterDTO character){
+    public ResponseEntity<CharacterDTO> save(@Valid @RequestBody CharacterDTO character){
         CharacterDTO savedCharacter = characterService.save(character);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedCharacter);
     }
 
     @GetMapping
     public ResponseEntity<List<CharacterBasicDTO>> getAll(
+            @Valid
             @RequestParam(required = false) String name,
             @RequestParam(required = false) Long age,
             @RequestParam(required = false) Double weight,
@@ -46,7 +48,7 @@ public class CharacterController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CharacterDTO> update(@PathVariable Long id,@RequestBody CharacterDTO character){
+    public ResponseEntity<CharacterDTO> update(@PathVariable Long id,@Valid @RequestBody CharacterDTO character){
         CharacterDTO characterDTO = characterService.update(id,character);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(characterDTO);
     }

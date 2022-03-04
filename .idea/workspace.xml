@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8b2494d6-a038-4e3e-9eb2-13ce782144b5" name="Changes" comment="cambio a intellij idea">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/auth/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/CharacterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/CharacterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/GenreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/GenreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/GenreEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/entity/GenreEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/controller/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/CharacterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/CharacterDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/GenreDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/GenreDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/MovieDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/dto/MovieDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/GenreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/GenreService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/GenreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alkemy/disney/service/impl/GenreServiceImpl.java" afterDir="false" />
     </list>
@@ -116,6 +121,8 @@
       <workItem from="1646051576408" duration="4559000" />
       <workItem from="1646100271929" duration="2625000" />
       <workItem from="1646171731610" duration="12971000" />
+      <workItem from="1646341949363" duration="3894000" />
+      <workItem from="1646382650885" duration="2470000" />
     </task>
     <task id="LOCAL-00001" summary="cambio a intellij idea">
       <created>1645351784465</created>
